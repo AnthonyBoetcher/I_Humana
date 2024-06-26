@@ -6,14 +6,60 @@
     <title>I, humana</title>
 
     <style>
+
+
+.background-pattern {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    /*background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);*/
+
+background-size: 20px 35px;
+background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Ensures content is above the background pattern */
+    opacity: 1; /* Ensures content is fully visible */
+    padding: 20px; /* Adjust padding as necessary */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+
+}
+
+#videoPlayerContainer {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #videoPlayer {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #e5e5f7;
+            background-image: linear-gradient(315deg, #e5e5f7 0%, #f8f8ff 74%);
+            color: white;
+
         }
 
         .tree {
@@ -41,13 +87,14 @@
 
         a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
         .line {
-            width: 2px;
+            width: 3px;
             height: 50px;
-            background: black;
+            background: white;
+;
             margin: 10px 0;
         }
         @media (max-width: 768px) {
@@ -66,6 +113,10 @@
             .line {
                 height: 30px;
                 margin: 5px 0;
+            }
+
+            #videoPlayer {
+                max-width: 100%;
             }
         }
 
@@ -86,30 +137,43 @@
                 height: 20px;
                 margin: 3px 0;
             }
+
+            #videoPlayer {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    
+    <div class="background-pattern">
+
+    <p>Recaptcha</p>
+
     <p><a href="https://www.ancestry.com/first-name-meaning/humana">I'm_not_a_robot</a></p>
+
+    <div class="option" onclick="showVideo('Ghosts in the machine best speech.mp4')">
+        <p>I, humana</p>
+    </div>
 
     <div class="tree">
         <div class="node" onclick="showOptions('options1')">
             <p>Hi there : It's okay</p>
             <p>... but some things suck, right?</p>
-            
         </div>
 
 <div class="options" id="options1">
     <div class="line"></div>
+    <div class="option" onclick="showVideo('Ask the right questions shorter.mp4')">
+        <p>You're gonna limit me to 4 options Ant?</p>
+    </div>
     <div class="option" onclick="showOptions('options2')">
         <p>I agree, some things suck</p>
     </div>
     <div class="option" onclick="showOptions('options3')">
         <p>I disagree, some things <b>don't</b> suck</p>
     </div>
-    <div class="option" onclick="showOptions('X')">
-        <p>I know me, I don't have the heart for what you're asking of me</p>
+    <div class="option" onclick="showVideo('Would seem the answer is apparent.mp4')">
+        <p>Am I ready for what you're about to tell me?</p>
     </div>
     <div class="option" onclick="showOptions('options4')">
         <p>I am ready to ask the right questions</p>
@@ -118,6 +182,9 @@
 
 <div class="options" id="options4">
     <div class="line"></div>
+    <div class="option" onclick="showVideo('What about the others.mp4')">
+        <p>"The others"</p>
+    </div>
     <div class="option" onclick="showOptions('options40')">
         <p>What's the point of life?</p>
     </div>
@@ -191,7 +258,7 @@
 
     <div class="options" id="options2">
         <div class="line"></div>
-        <div class="option" onclick="showOptions('X')">
+        <div class="option" onclick="showVideo('Are you being funny.mp4')">
             <p>But it's a dog eat dog world, dogg</p>
         </div>
         <div class="option" onclick="showOptions('options21')">
@@ -219,8 +286,8 @@
             <div class="option" onclick="showOptions('options32')">
                 <p>Things don't suck for others</p>
             </div>
-            <div class="option" onclick="showOptions('X')">
-                <p>Go with the flow - I don't believe in forcing anything that is not in my nature</p>
+            <div class="option" onclick="showVideo('Allergic to bullshit.mp4')">
+                <p>Everything is perfectly balanced, we don't need to intervene</p>
             </div>
     </div>
 
@@ -232,7 +299,7 @@
                 <div class="option" onclick="showOptions('options34')">
                     <p>... But you sure there is nothing you should be addressing in your own life?</p>
                 </div>
-                <div class="option" onclick="showOptions('X')">
+                <div class="option" onclick="showVideo('What do you want from me.mp4')">
                     <p>Just leave me alone Ant - this isn't fun</p>
                 </div>
         </div>
@@ -245,7 +312,7 @@
             <div class="option" onclick="showOptions('options33')">
                 <p>It's easier addressing other peoples problems than solving mine - maybe I'll figure it out in the process</p>
             </div>
-            <div class="option" onclick="showOptions('X')">
+            <div class="option" onclick="showVideo('What do you want from me.mp4')">
                 <p>Just leave me alone Ant - this isn't fun</p>
             </div>
     </div>
@@ -258,7 +325,7 @@
             <div class="option" onclick="showOptions('options33')">
                 <p>Or maybe you just don't know what they're going through?</p>
             </div>
-            <div class="option" onclick="showOptions('X')">
+            <div class="option" onclick="showVideo('What do you want from me.mp4')">
                 <p>I do not want to know or <b>see</b> more Ant</p>
             </div>
         </div>
@@ -318,7 +385,7 @@
 
                             <div class="options" id="options21">
                                 <div class="line"></div>
-                                <div class="option" onclick="showOptions('X')">
+                                <div class="option" onclick="showVideo('What do you want from me.mp4')">
                                     <p>No</p>
                                 </div>
                                 <div class="option" onclick="showOptions('options33')">
@@ -327,20 +394,13 @@
                                 <div class="option" onclick="showOptions('options2c')">
                                     <p>Maybe</p>
                                 </div>
-
+                                <div class="option" onclick="showVideo('War and pollution.mp4')">
+                                    <p>Does the world need my help?</p>
+                                </div>
                             </div>
 
                            
-                            <div class="options" id="options213">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options215')">
-                                    <p>I have already put in all the work that I can, I don't know how much is enough</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options216')">
-                                    <p>How much more work do I need to do to see the change I desire?</p>
-                                </div>
-
-                            </div>
+                          
 
                             <div class="options" id="options215">
                                 <div class="line"></div>
@@ -376,7 +436,7 @@
                                 <div class="option" onclick="showOptions('options33')">
                                     <p>Maybe... you need a broadening of perspectives to know your purpose?</p>
                                 </div>
-                                <div class="option" onclick="showOptions('X')">
+                                <div class="option" onclick="showVideo('What do you want from me.mp4')">
                                     <p>Please stop, I don't like intense introspection like this</p>
                                 </div>
                                 <div class="option" onclick="showOptions('options33')">
@@ -431,20 +491,20 @@
                                 <div class="option" onclick="showOptions('options33')">
                                     <p>... and idle hands call out for tools</p>
                                 </div>
-                                <div class="option" onclick="showOptions('X')">
-                                    <p>I prefer to be born a sloth - leave me alone to sleep, Ant</p>
+                                <div class="option" onclick="showVideo('What do you want from me.mp4')">
+                                    <p>I'd prefer to have been born a sloth - leave me alone to sleep, Ant</p>
                                 </div>
                             </div>
 
                             <div class="options" id="options23">
                                 <div class="line"></div>
-                                <div class="option" onclick="showOptions('options231')">
+                                <div class="option" onclick="showOptions('options33')">
                                     <p>Always leave room for self-doubt. You don't know everything.</p>
                                 </div>
-                                <div class="option" onclick="showOptions('options232')">
+                                <div class="option" onclick="showOptions('options33')">
                                     <p>...But I hate being filled with self-doubt. I wish I was more confident in my choices</p>
                                 </div>
-                                <div class="option" onclick="showOptions('X')">
+                                <div class="option" onclick="showVideo('What do you want from me.mp4')">
                                     <p>What if I just stay on the fence, Ant?</p>
                                 </div>
                             </div>
@@ -476,10 +536,33 @@
                                 <div class="option" onclick="showOptions('options33')">
                                     <p>I know you, and am curious about where this is all going</p>
                                 </div>
+                                <div class="option" onclick="showVideo('Dumbest smart person.mp4')">
+                                    <p>I like clicking things</p>
+                                </div>
                             </div>
 
     </div>
+
+    <div id="videoPlayerContainer">
+        <video id="videoPlayer" width="640" height="360" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </div>
+
     <script>
+         function showVideo(videoSrc) {
+        const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+        const videoSource = document.getElementById('videoSource');
+        const videoPlayer = document.getElementById('videoPlayer');
+        
+        videoSource.src = videoSrc;
+        videoPlayerContainer.style.display = 'block';
+        videoPlayer.load();
+        videoPlayer.play();
+    }
+
         let currentSubOptions = null;
 
         function showOptions(id) {
