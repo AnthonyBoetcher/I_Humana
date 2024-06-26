@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I, human - AntGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tree {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .node {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .options {
+            display: none;
+            margin-left: 20px;
+        }
+
+        .option {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .line {
+            width: 2px;
+            height: 50px;
+            background: black;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .tree {
+                max-width: 300px;
+            }
+
+            .node, .options {
+                margin-left: 10px;
+            }
+
+            .line {
+                height: 30px;
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .tree {
+                max-width: 200px;
+            }
+
+            .node, .options {
+                margin-left: 5px;
+            }
+
+            .line {
+                height: 20px;
+                margin: 3px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <div class="node" onclick="showOptions('options1')">
+            <p>Hi there : It's okay</p>
+            <p>... but some things suck, right?</p>
+            
+        </div>
+
+<div class="options" id="options1">
+    <div class="line"></div>
+    <div class="option" onclick="showOptions('options2')">
+        <p>I agree, some things suck</p>
+    </div>
+    <div class="option" onclick="showOptions('options3')">
+        <p>I disagree, some things <b>don't</b> suck</p>
+    </div>
+    <div class="option" onclick="showOptions('X')">
+        <p>I know me, I don't have the heart for what you're asking of me</p>
+    </div>
+    <div class="option" onclick="showOptions('options4')">
+        <p>I am ready to ask the right questions</p>
+    </div>
+</div>
+
+<div class="options" id="options4">
+    <div class="line"></div>
+    <div class="option" onclick="showOptions('options40')">
+        <p>What's the point of life?</p>
+    </div>
+    <div class="option" onclick="showOptions('options41')">
+        <p>What is this voice inside my head?</p>
+    </div>
+    <div class="option" onclick="showOptions('options42')">
+        <p>Who, or what, made 'all of this'?</p>
+    </div>
+    <div class="option" onclick="showOptions('options43')">
+        <p>What do you wish you knew when you were my age?</p>
+    </div>
+    <div class="option" onclick="showOptions('options44')">
+        <p>How do I become a light in this increasingly dark world?</p>
+    </div>
+    <div class="option" onclick="showOptions('options45')">
+        <p>How can I become happier?</p>
+    </div>
+    <div class="option" onclick="showOptions('options46')">
+        <p>How do I find my purpose? My true calling</p>
+    </div>
+    <div class="option" onclick="showOptions('options47')">
+        <p>How do I connect more with the world around me?</p>
+    </div>
+    <div class="option" onclick="showOptions('options48')">
+        <p>How do I reach my full potential, not half or a quarter?</p>
+    </div>
+    <div class="option" onclick="showOptions('options49')">
+        <p>How do I make more time to focus on the important things?</p>
+    </div>
+    <div class="option" onclick="showOptions('options50')">
+        <p>How do I find more love to give?</p>
+    </div>
+    <div class="option" onclick="showOptions('options51')">
+        <p>How do I seek out the truth of the world around me?</p>
+    </div>
+    <div class="option" onclick="showOptions('options52')">
+        <p>How do I find more more time to pursue my passions?</p>
+    </div>
+    <div class="option" onclick="showOptions('options53')">
+        <p>I see myself in others - what is this?</p>
+    </div>
+    <div class="option" onclick="showOptions('options54')">
+        <p>How do I start asking the right questions, looking in the right directions?</p>
+    </div>
+    <div class="option" onclick="showOptions('options55')">
+        <p>What's the point of emotions?</p>
+    </div>
+    <div class="option" onclick="showOptions('options56')">
+        <p>Why do humans need "good vibes and lekker energy"?</p>
+    </div>
+    <div class="option" onclick="showOptions('options57')">
+        <p>What is wealth?</p>
+    </div>
+    <div class="option" onclick="showOptions('options58')">
+        <p>How do I learn more of the things that really matter in life?</p>
+    </div>
+    <div class="option" onclick="showOptions('options59')">
+        <p>What is A.I?</p>
+    </div>
+    <div class="option" onclick="showOptions('options60')">
+        <p>How do I feel less and not react emotionally?</p>
+    </div>
+    <div class="option" onclick="showOptions('options61')">
+        <p>How do I feel more and react emotionally?</p>
+    </div>
+    <div class="option" onclick="showOptions('options61')">
+        <p>What is 'intiution' and how do I use it more in my life?</p>
+    </div>
+</div>
+
+    <div class="options" id="options2">
+        <div class="line"></div>
+        <div class="option" onclick="showOptions('X')">
+            <p>But it's a dog eat dog world, dogg</p>
+        </div>
+        <div class="option" onclick="showOptions('options21')">
+            <p>Would you like to change them?</p>
+        </div>
+        <div class="option" onclick="showOptions('options22')">
+            <p>I prefer not to overthink it</p>
+        </div>
+        <div class="option" onclick="showOptions('options23')">
+            <p>I'm doubting myself now - maybe not <b>everything</b> is great</p>
+        </div>
+        <div class="option" onclick="showOptions('options24')">
+            <p>Why do <b>you</b> care?</p>
+        </div>
+        <div class="option" onclick="showOptions('options25')">
+            <p>Why are you still clicking sentences?</p>
+        </div>
+    </div>
+
+    <div class="options" id="options3">
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options31')">
+                <p>Things don't suck for me</p>
+            </div>
+            <div class="option" onclick="showOptions('options32')">
+                <p>Things don't suck for others</p>
+            </div>
+            <div class="option" onclick="showOptions('X')">
+                <p>Go with the flow - I don't believe in forcing anything that is not in my nature</p>
+            </div>
+    </div>
+
+        <div class="options" id="options31">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Okay, so maybe you can do some thing for others?</p>
+                </div>
+                <div class="option" onclick="showOptions('options34')">
+                    <p>... But you sure there is nothing you should be addressing in your own life?</p>
+                </div>
+                <div class="option" onclick="showOptions('X')">
+                    <p>Just leave me alone Ant - this isn't fun</p>
+                </div>
+        </div>
+
+        <div class="options" id="options34">
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options4')">
+                <p>There are probably many things I should be addressing in my life</p>
+            </div>
+            <div class="option" onclick="showOptions('options33')">
+                <p>It's easier addressing other peoples problems than solving mine - maybe I'll figure it out in the process</p>
+            </div>
+            <div class="option" onclick="showOptions('X')">
+                <p>Just leave me alone Ant - this isn't fun</p>
+            </div>
+    </div>
+
+        <div class="options" id="options32">
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options33')">
+                <p>You think others 'have it better' than you? Perhaps you'd like to be proven wrong?</p>
+            </div>
+            <div class="option" onclick="showOptions('options33')">
+                <p>Or maybe you just don't know what they're going through?</p>
+            </div>
+            <div class="option" onclick="showOptions('X')">
+                <p>I do not want to know or <b>see</b> more Ant</p>
+            </div>
+        </div>
+
+        <div class="options" id="options33">
+            <div class="line"></div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>Nation Sea Rescue</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>Habitat for humanity</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>Volunteer Wildfire Services</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>Coding</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>SANCOB</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>TEARS</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>SADAG</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>LIFELINE</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>OpenEducation</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>Doctors Without Borders</url></p>
+            </div>
+            <div class="option">
+                <p><url='https://www.nsri.org.za/forms/sea-rescue-volunteer'>... The world is your oyster</url></p>
+            </div>
+        </div>
+
+
+                            <div class="options" id="options21">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('X')">
+                                    <p>No</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>Yes</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options2c')">
+                                    <p>Maybe</p>
+                                </div>
+
+                            </div>
+
+                           
+                            <div class="options" id="options213">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options215')">
+                                    <p>I have already put in all the work that I can, I don't know how much is enough</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options216')">
+                                    <p>How much more work do I need to do to see the change I desire?</p>
+                                </div>
+
+                            </div>
+
+                            <div class="options" id="options215">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options217')">
+                                    <p>'Enough' will become apparent, once you reach it</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options218')">
+                                    <p>Is there an easier way?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options219')">
+                                    <p>I'm tired, I can't keep grinding away like this anymore</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options219">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options220')">
+                                    <p>Take a break - we're all in this for the long-haul</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options221')">
+                                    <p>Is it comforting to know that <b>nobody</b> survives life?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options222')">
+                                    <p>Are you spreading yourself too thin?</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options2c">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>Maybe... your life could do with more decisive action?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>Maybe... you need a broadening of perspectives to know your purpose?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('X')">
+                                    <p>Please stop, I don't like intense introspection like this</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>Maybe... I'm expecting others to do for me - yet I will not do for others?</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options22">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options221')">
+                                    <p>You prefer not to think about... life?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options222')">
+                                    <p>You prefer not to think about... problems?</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options223')">
+                                    <p>I prefer not to think. Fullstop, Ant.</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options221">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I'm petrified of being vulnerable</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I'm lost, confused and don't want to think about it</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I am comfortable where I am - but I would like to be braver</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options222">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>Problems are fleeting - unwaivering collective action is forever</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I think about problems a lot - but don't know how to get involved</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I alone am powerless, I've tried and failed before, I've given up</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options223">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>A free mind, unburdened by thought, is one available for the greater good</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>... and idle hands call out for tools</p>
+                                </div>
+                                <div class="option" onclick="showOptions('X')">
+                                    <p>I prefer to be born a sloth - leave me alone to sleep, Ant</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options23">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options231')">
+                                    <p>Always leave room for self-doubt. You don't know everything.</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options232')">
+                                    <p>...But I hate being filled with self-doubt. I wish I was more confident in my choices</p>
+                                </div>
+                                <div class="option" onclick="showOptions('X')">
+                                    <p>What if I just stay on the fence, Ant?</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options24">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I care because sooner or later someone will care for me, and me for them</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I care, because you care - maybe not now. But you will be called to care</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I care because without compassion and empathy, we should count ourselves umongst the machines</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I care because if nothing else, we have each other</p>
+                                </div>
+                            </div>
+
+                            <div class="options" id="options25">
+                                <div class="line"></div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I don't know why I am still here... on Earth</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I don't know why I am still here... on this ridiculous website</p>
+                                </div>
+                                <div class="option" onclick="showOptions('options33')">
+                                    <p>I know you, and am curious about where this is all going</p>
+                                </div>
+                            </div>
+
+    </div>
+    <script>
+        let currentSubOptions = null;
+
+        function showOptions(id) {
+            // Hide currently displayed sub-options if there are any
+            if (currentSubOptions && currentSubOptions !== id) {
+                document.getElementById(currentSubOptions).style.display = 'none';
+            }
+
+            // Show the selected options
+            const selectedOptions = document.getElementById(id);
+            selectedOptions.style.display = 'block';
+            
+            // Update current sub-options tracker
+            currentSubOptions = id;
+        }
+    </script>
+</body>
+</html>
