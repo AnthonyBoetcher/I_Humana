@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I, humana</title>
+    <link rel="icon" href="z2.png" type="image/png">
 
     <style>
+    
 
 
 .background-pattern {
@@ -30,8 +32,8 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     color: white;
+    font-size: calc(1em + 0.3vw);
 
 }
 
@@ -45,21 +47,27 @@ html {
             max-width: 640px;
             height: auto;
         }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: black;
             margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+            padding: 0;
+            height: auto;
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #e5e5f7;
-            background-image: linear-gradient(315deg, #e5e5f7 0%, #f8f8ff 74%);
             color: white;
+                }
+        
+        .content {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
+        .filler {
+            height: 200vh; /* Increase the height to ensure overflow */
         }
 
         .tree {
@@ -98,6 +106,10 @@ html {
             margin: 10px 0;
         }
         @media (max-width: 768px) {
+            html {
+    font-size: calc(1em + 0.3vw);
+  }
+            
             body {
                 padding: 10px;
             }
@@ -121,6 +133,10 @@ html {
         }
 
         @media (max-width: 480px) {
+            html {
+    font-size: calc(1em + 0.3vw);
+  }
+            
             body {
                 padding: 5px;
             }
@@ -149,11 +165,17 @@ html {
 
     <p>Recaptcha</p>
 
-    <p><a href="https://www.ancestry.com/first-name-meaning/humana">I'm_not_a_robot</a></p>
-
     <div class="option" onclick="showVideo('Ghosts in the machine best speech.mp4')">
-        <p>I, humana</p>
+        <p>I'm_not_a_robot - server</p>
     </div>
+
+    <div class="option" onclick="showVideo('https://www.youtube.com/embed/QznsrytmB30')">
+        <p>I'm_not_a_robot - embedded youtube</p>
+    </div>
+
+    <div class="video-container" id="videoContainer"></div>
+
+    <p><a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank">I, Humana</a></p>
 
     <div class="tree">
         <div class="node" onclick="showOptions('options1')">
@@ -332,6 +354,9 @@ html {
 
         <div class="options" id="options33">
             <div class="line"></div>
+            <div class="option">
+                <p><a href="https://www.philosophyschool.com/">School of practical philosophy</a></p>
+            </div>
             <div class="option">
                 <p><a href="https://sugarbird.org.za/like-minded-groups/">Join the fight against aliens</a></p>
             </div>
@@ -552,6 +577,23 @@ html {
     </div>
 
     <script>
+
+function showVideo(videoUrl) {
+            var iframe = document.createElement('iframe');
+            iframe.width = "560";
+            iframe.height = "315";
+            iframe.src = videoUrl;
+            iframe.title = "YouTube video player";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            iframe.referrerPolicy = "strict-origin-when-cross-origin";
+            iframe.allowFullscreen = true;
+
+            var videoContainer = document.getElementById('videoContainer');
+            videoContainer.innerHTML = '';
+            videoContainer.appendChild(iframe);
+        }
+
          function showVideo(videoSrc) {
         const videoPlayerContainer = document.getElementById('videoPlayerContainer');
         const videoSource = document.getElementById('videoSource');
