@@ -7,8 +7,17 @@
     <link rel="icon" href="z2.png" type="image/png">
 
     <style>
-    
-
+    .container {
+            display: flex;
+            
+        }
+        .option {
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .option img {
+            vertical-align: middle;
+        }
 
 .background-pattern {
     position: relative;
@@ -158,24 +167,21 @@ html {
                 max-width: 100%;
             }
         }
+        
     </style>
 </head>
 <body>
     <div class="background-pattern">
-
-    <p>Recaptcha</p>
-
-    <div class="option" onclick="showVideo('Ghosts in the machine best speech.mp4')">
-        <p>I'm_not_a_robot - server</p>
-    </div>
-
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/QznsrytmB30')">
-        <p>I'm_not_a_robot - embedded youtube</p>
-    </div>
+        <p></p>
+        <div class="container" >
+            <div class="option" onclick="showVideo('https://www.youtube.com/embed/QznsrytmB30')">
+                <img src="I'm not a robot image2.png" alt="Thumbnail" width="150" height="50">
+            </div>
+            <div><a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank"><img src="Humana recaptcha.jpg" alt="Thumbnail" width="150" height="50"></a></div>
+            <img src="recaptcha.png" alt="Recaptcha" width="50" height="50">
+        </div>
 
     <div class="video-container" id="videoContainer"></div>
-
-    <p><a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank">I, Humana</a></p>
 
     <div class="tree">
         <div class="node" onclick="showOptions('options1')">
@@ -567,42 +573,39 @@ html {
                             </div>
 
     </div>
-
-    <div id="videoPlayerContainer">
-        <video id="videoPlayer" width="640" height="360" controls>
-            <source id="videoSource" src="" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
     </div>
 
     <script>
 
 function showVideo(videoUrl) {
-            var iframe = document.createElement('iframe');
-            iframe.width = "560";
-            iframe.height = "315";
-            iframe.src = videoUrl;
-            iframe.title = "YouTube video player";
-            iframe.frameBorder = "0";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-            iframe.referrerPolicy = "strict-origin-when-cross-origin";
-            iframe.allowFullscreen = true;
-
-            var videoContainer = document.getElementById('videoContainer');
-            videoContainer.innerHTML = '';
-            videoContainer.appendChild(iframe);
-        }
-
-         function showVideo(videoSrc) {
-        const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-        const videoSource = document.getElementById('videoSource');
-        const videoPlayer = document.getElementById('videoPlayer');
+        console.log("showVideo function called with URL:", videoUrl);
         
-        videoSource.src = videoSrc;
-        videoPlayerContainer.style.display = 'block';
-        videoPlayer.load();
-        videoPlayer.play();
+        // Create the iframe element
+        var iframe = document.createElement('iframe');
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.src = videoUrl;
+        iframe.title = "YouTube video player";
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+
+        // Append the iframe to the videoContainer
+        var videoContainer = document.getElementById('videoContainer');
+        videoContainer.innerHTML = ''; // Clear previous content
+        videoContainer.appendChild(iframe);
+
+        // Add a close button after showing the video
+        var closeButton = document.createElement('button');
+        closeButton.textContent = 'Close Video';
+        closeButton.onclick = closeVideo;
+        videoContainer.appendChild(closeButton);
+    }
+
+    function closeVideo() {
+        var videoContainer = document.getElementById('videoContainer');
+        videoContainer.innerHTML = ''; // Remove the iframe and button
     }
 
         let currentSubOptions = null;
