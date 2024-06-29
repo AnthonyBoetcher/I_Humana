@@ -168,29 +168,88 @@ html {
                 max-width: 100%;
             }
         }
-        
+        .popup-container {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Popup content */
+        .popup-content {
+            background-color: none;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: none;
+            width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center align content */
+        }
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .option {
+            cursor: pointer;
+        }
+       img{
+        border-radius: 10px;
+       }
+       
+
     </style>
 </head>
 <body>
     <div class="background-pattern">
         <p></p>
-        <div class="container" >
-            <div class="option" onclick="showVideo('https://www.youtube.com/embed/QznsrytmB30')">
-                <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
-            </div>
-            <div><a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank"><img src="Humana recaptcha.jpg" alt="Thumbnail" width="170vw" height="60vh"></a></div>
-            <div class='option'>
-            <img src="recaptcha.png" alt="Recaptcha" width="60vw" height="60vw" onclick="showVideo('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')">
-        </div>
-    </div>
 
-    <div class="video-container" id="videoContainer"></div>
+        <div id="popupContainer" class="popup-container">
+            <div class="popup-content">
+                <h3>Everything is interactive, for the curious amongst us...</h3>        
+                <span class="close" id="closeBtn">&times;</span>
+                <div class="container">
+                    <div class="option" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')">
+                        <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
+                    </div>
+                    <div>
+                        <a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank">
+                            <img src="Humana recaptcha.jpg" alt="Thumbnail" width="170vw" height="60vh">
+                        </a>
+                    </div>
+                    <div class='option' onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')">
+                        <img src="recaptcha.png" alt="Recaptcha" width="60vw" height="60vw">
+                    </div>
+                </div>
+                <div class="video-container2" id="videoContainer2"></div>
+            </div>
+        </div>
+
 
     <div class="tree">
         <div class="node" onclick="showOptions('options1')">
             <p>Hi there : It's okay</p>
             <p>... but some things suck, right?</p>
         </div>
+        <div class="video-container" id="videoContainer"></div>
+
 
 <div class="options" id="options1">
     <div class="line"></div>
@@ -597,17 +656,32 @@ html {
                             </div>
 
     </div>
+
     </div>
 
-    <script>
 
+    <script>
+ // Show the popup container when the page loads
+ window.onload = function() {
+        document.getElementById('popupContainer').style.display = "block";
+    };
+
+    // Close the popup when the user clicks on <span> (x)
+    document.getElementById('closeBtn').onclick = function() {
+        document.getElementById('popupContainer').style.display = "none";
+    };
+
+    // Function to show the video in the iframe
+    function showVideo(videoUrl) {
+        document.getElementById('videoPlayer').src = videoUrl;
+    }
 function showVideo(videoUrl) {
         console.log("showVideo function called with URL:", videoUrl);
         
         // Create the iframe element
         var iframe = document.createElement('iframe');
-        iframe.width = "560";
-        iframe.height = "315";
+        iframe.width = "auto";
+        iframe.height = "auto";
         iframe.src = videoUrl;
         iframe.title = "YouTube video player";
         iframe.frameBorder = "0";
@@ -632,6 +706,37 @@ function showVideo(videoUrl) {
         videoContainer.innerHTML = ''; // Remove the iframe and button
     }
 
+
+     // Function to show the video in the iframe
+     function showVideo2(videoUrl) {
+        document.getElementById('videoPlayer').src = videoUrl;
+    }
+function showVideo2(videoUrl) {
+        console.log("showVideo function called with URL:", videoUrl);
+        
+        // Create the iframe element
+        var iframe = document.createElement('iframe');
+        iframe.width = "auto";
+        iframe.height = "auto";
+        iframe.src = videoUrl;
+        iframe.title = "YouTube video player";
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+
+        // Append the iframe to the videoContainer2
+        var videoContainer2 = document.getElementById('videoContainer2');
+        videoContainer2.innerHTML = ''; // Clear previous content
+        videoContainer2.appendChild(iframe);
+
+        // Add a close button after showing the video
+        var closeButton = document.createElement('button');
+        closeButton.textContent = 'Okay?';
+        closeButton.onclick = closeVideo2;
+        videoContainer2.appendChild(closeButton);
+    }
+   
         let currentSubOptions = null;
 
         function showOptions(id) {
