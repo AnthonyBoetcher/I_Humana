@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I, Humana</title>
     <link rel="icon" href="z22.png" type="image/png">
-    
+
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
-       (function(){
-          emailjs.init("G6YyhjEZHG_amr6jB"); // Replace with your User ID
-       })();
+        (function () {
+            emailjs.init("G6YyhjEZHG_amr6jB"); // Replace with your User ID
+        })();
     </script>
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VQ2QXYMZX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-0VQ2QXYMZX');
-</script>
-    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VQ2QXYMZX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0VQ2QXYMZX');
+    </script>
+
     <style>
-    .container {
+        .container {
             display: flex;
         }
-        
+
         .option {
             cursor: pointer;
             margin-right: 10px;
         }
+
         .option img {
             vertical-align: middle;
             cursor: pointer;
         }
 
-.background-pattern {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    /*background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);*/
+        .background-pattern {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            /*background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);*/
 
-background-size: 20px 35px;
-background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-}
+            background-size: 20px 35px;
+            background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+        }
 
-.content {
-    position: relative;
-    z-index: 1; /* Ensures content is above the background pattern */
-    opacity: 1; /* Ensures content is fully visible */
-    padding: 20px; /* Adjust padding as necessary */
-}
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Ensures content is above the background pattern */
+            opacity: 1;
+            /* Ensures content is fully visible */
+            padding: 20px;
+            /* Adjust padding as necessary */
+        }
 
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    color: white;
-    font-size: calc(1em + 0.3vw);
-    font-size: 1.2rem;
-}
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            color: white;
+            font-size: calc(1em + 0.3vw);
+            font-size: 1.2rem;
+        }
 
-#videoPlayerContainer {
+        #videoPlayerContainer {
             display: none;
             margin-top: 20px;
             text-align: center;
         }
+
         #videoPlayer {
             width: 100%;
             max-width: 640px;
             height: auto;
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: black;
             margin: 0;
             padding: 0;
             height: auto;
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            min-height: 100vh;
+            /* Ensure body takes at least full viewport height */
             display: flex;
             flex-direction: column;
             align-items: center;
             color: white;
-                }
-        
+        }
+
         .content {
             width: 100%;
             padding: 20px;
@@ -94,7 +102,8 @@ html {
         }
 
         .filler {
-            height: 200vh; /* Increase the height to ensure overflow */
+            height: 200vh;
+            /* Increase the height to ensure overflow */
         }
 
         .tree {
@@ -102,12 +111,13 @@ html {
             max-width: 400px;
             margin: 0 auto;
             position: relative;
-            
+
         }
 
-         .option:hover {
+        .option:hover {
             transform: scale(1.04);
         }
+
         .node {
             margin-bottom: 20px;
             margin-left: 20px;
@@ -125,28 +135,29 @@ html {
         }
 
         a {
-  text-decoration: none;
-  color: white;
+            text-decoration: none;
+            color: white;
 
-  &:hover {
-    text-decoration: underline;
-    transform: scale(1.04);
-  }
-}
+            &:hover {
+                text-decoration: underline;
+                transform: scale(1.04);
+            }
+        }
 
 
         .line {
             width: 3px;
             height: 50px;
             background: white;
-;
+            ;
             margin: 10px 0;
         }
+
         @media (max-width: 768px) {
             html {
-    font-size: calc(1em + 0.3vw);
-  }
-            
+                font-size: calc(1em + 0.3vw);
+            }
+
             body {
                 padding: 10px;
             }
@@ -155,7 +166,8 @@ html {
                 max-width: 300px;
             }
 
-            .node, .options {
+            .node,
+            .options {
                 margin-left: 10px;
             }
 
@@ -171,9 +183,9 @@ html {
 
         @media (max-width: 480px) {
             html {
-    font-size: calc(1em + 0.3vw);
-  }
-            
+                font-size: calc(1em + 0.3vw);
+            }
+
             body {
                 padding: 5px;
             }
@@ -182,7 +194,8 @@ html {
                 max-width: 200px;
             }
 
-            .node, .options {
+            .node,
+            .options {
                 margin-left: 5px;
             }
 
@@ -195,33 +208,48 @@ html {
                 max-width: 100%;
             }
         }
+
         .popup-container {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
         }
+
         /* Popup content */
         .popup-content {
             background-color: none;
-            margin: 5% auto; /* 5% from the top and centered */
+            margin: 5% auto;
+            /* 5% from the top and centered */
             padding: 100px;
             border: none;
-            width: 60%; /* Could be more or less, depending on screen size */
-            text-align: center; /* Center align content */
+            width: 60%;
+            /* Could be more or less, depending on screen size */
+            text-align: center;
+            /* Center align content */
         }
+
         /* Close button */
         .close {
             color: #aaa;
             font-size: 1.2rem;
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: white;
@@ -229,93 +257,106 @@ html {
             cursor: pointer;
             transform: scale(1.04);
         }
+
         .container {
             display: flex;
             justify-content: center;
             gap: 10px;
         }
+
         .option {
             cursor: pointer;
         }
-       img{
-        border-radius: 10px;
-       }
-       img:hover{
-        opacity:0.8;
-        transform: scale(1.04);
-       }
-      /* Feedback Icon */
-#feedback-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-}
 
-/* Feedback Form */
-#feedback-form {
-    display: none;
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
-}
+        img {
+            border-radius: 10px;
+        }
 
-#feedback-form h2 {
-    margin: 0 0 10px;
-}
+        img:hover {
+            opacity: 0.8;
+            transform: scale(1.04);
+        }
 
-#feedback-form p {
-    margin: 10px 0;
-    font-weight: bold;
-}
+        /* Feedback Icon */
+        #feedback-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
 
-#feedback-form textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-}
+        /* Feedback Form */
+        #feedback-form {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
 
-#feedback-form button {
-    margin-top: 10px;
-}
+        #feedback-form h2 {
+            margin: 0 0 10px;
+        }
 
-/* Checkbox Styling */
-#feedback-form label {
-    display: block;
-    margin-bottom: 0px;
-    color: black;
-}
+        #feedback-form p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
 
-#feedback-form input[type="checkbox"] {
-    margin-right: 10px;
-}
+        #feedback-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
 
+        #feedback-form button {
+            margin-top: 10px;
+        }
+
+        /* Checkbox Styling */
+        #feedback-form label {
+            display: block;
+            margin-bottom: 0px;
+            color: black;
+        }
+
+        #feedback-form input[type="checkbox"] {
+            margin-right: 10px;
+        }
     </style>
 </head>
+
 <body>
     <div class="background-pattern">
         <p></p>
 
         <div id="popupContainer" class="popup-container">
             <div class="popup-content">
-                <div class='option' onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')"><h3><i>Everything</i> is interactive, for the curious among us...</h3>        
-                </div>
-                    <div class="container">
+                <h3><a target="_blank" style="text-decoration: none;" class='option'
+                        href="https://en.wikipedia.org/wiki/Everything#:~:text=Everything%2C%20every%2Dthing%2C%20or,it%20may%20refer%20to%20anything."><i>Everything</i></a>is
+                    <a target="_blank" style="text-decoration: none;" class='option'
+                        href="https://www.britannica.com/dictionary/interact">interactive,</a>for the <a
+                        style="text-decoration: none;" class='option'
+                        onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')">curious</a><a
+                        target="_blank" style="text-decoration: none;" class='option'
+                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us</a><a
+                        target="_blank" style="text-decoration: none;" class='option'
+                        href="https://www.britannica.com/video/186420/paradox-David-Hilbert-hotel">...</a></h3>
+                <div class="container">
                     <div class="option" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')">
                         <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
                     </div>
@@ -324,164 +365,173 @@ html {
                             <img src="Humana recaptcha.jpg" alt="Thumbnail" width="170vw" height="60vh">
                         </a>
                     </div>
-                    <div class='option' onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')">
+                    <div class='option'
+                        onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')">
                         <img src="recaptcha.png" alt="Recaptcha" width="60vw" height="60vw">
                     </div>
                 </div>
                 <div class="video-container2" id="videoContainer2"></div>
                 <span class="close" id="closeBtn">Close &times;</span>
+                <p style="color:black"><a target="_blank" style="color:black; text-decoration: none;" class='option'
+                        href="https://www.reddit.com/r/askphilosophy/comments/195lqb7/how_would_you_define_nothing/">....................................................................<br>................................................NOTHING...........................................<br>...............................................</a>
+                </p>
             </div>
         </div>
 
 
-    <div class="tree">
-        <div class="node" onclick="showOptions('options1')">
-            <p>Hi there : It's okay</p>
-            <p>... but some things suck, right?</p>
-        </div>
-        <div class="video-container" id="videoContainer"></div>
-
-
-<div class="options" id="options1">
-    <div class="line"></div>
-    <!--I trust your judgement-->
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/eKUuDRXtfPc')">
-        <p>You're gonna limit me to 7 options Ant?</p>
-    </div>
-    <div class="option" onclick="showOptions('options3')">
-        <p>I disagree, some things <b>don't</b> suck</p>
-    </div>
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/WNqkQrHj_ac')">
-        <p>Am I ready for what you're about to tell me?</p>
-    </div>
-    <div class="option" onclick="showOptions('options2')">
-        <p>I agree, some things suck</p>
-    </div>
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/jTsTUnCVqk0')">
-        <p>Why am I here?</p>
-    </div>
-    <div class="option" onclick="showOptions('options4')">
-        <p>I am ready to ask the right questions</p>
-    </div>
-        <!--Interactions haven't been entirely normal, wouldn't you agree-->
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/KovQrs2g7gQ')">
-        <p>This is weird...</p>
-    </div>
-</div>
-
-<div class="options" id="options4">
-    <div class="line"></div>
-    <div class="option" onclick="showVideo('https://www.youtube.com/embed/89-2RE5XAOA')">
-        <p>"The others"</p>
-    </div>
-    <div class="option" onclick="showOptions('options40')">
-        <p>What's the point of life?</p>
-    </div>
-    <div class="option" onclick="showOptions('options41')">
-        <p>What is this voice inside my head?</p>
-    </div>
-    <div class="option" onclick="showOptions('options42')">
-        <p>Who, or what, made 'all of this'?</p>
-    </div>
-    <div class="option" onclick="showOptions('options43')">
-        <p>What do you wish you knew when you were my age?</p>
-    </div>
-    <div class="option" onclick="showOptions('options44')">
-        <p>How do I become a light in this increasingly dark world?</p>
-    </div>
-    <div class="option" onclick="showOptions('options45')">
-        <p>How can I become happier?</p>
-    </div>
-    <div class="option" onclick="showOptions('options46')">
-        <p>How do I find my purpose? My true calling</p>
-    </div>
-    <div class="option" onclick="showOptions('options47')">
-        <p>How do I connect more with the world around me?</p>
-    </div>
-    <div class="option" onclick="showOptions('options48')">
-        <p>How do I reach my full potential, not half or a quarter?</p>
-    </div>
-    <div class="option" onclick="showOptions('options49')">
-        <p>How do I make more time to focus on the important things?</p>
-    </div>
-    <div class="option" onclick="showOptions('options50')">
-        <p>How do I find more love to give?</p>
-    </div>
-    <div class="option" onclick="showOptions('options51')">
-        <p>How do I seek out the truth of the world around me?</p>
-    </div>
-    <div class="option" onclick="showOptions('options52')">
-        <p>How do I find more more time to pursue my passions?</p>
-    </div>
-    <div class="option" onclick="showOptions('options53')">
-        <p>I see myself in others - what is this?</p>
-    </div>
-    <div class="option" onclick="showOptions('options54')">
-        <p>How do I start asking the right questions, looking in the right directions?</p>
-    </div>
-    <div class="option" onclick="showOptions('options55')">
-        <p>What's the point of emotions?</p>
-    </div>
-    <div class="option" onclick="showOptions('options56')">
-        <p>Why do humans need "good vibes and lekker energy"?</p>
-    </div>
-    <div class="option" onclick="showOptions('options57')">
-        <p>What is wealth?</p>
-    </div>
-    <div class="option" onclick="showOptions('options58')">
-        <p>How do I learn more of the things that really matter in life?</p>
-    </div>
-    <div class="option" onclick="showOptions('options59')">
-        <p>What is A.I?</p>
-    </div>
-    <div class="option" onclick="showOptions('options60')">
-        <p>How do I feel less and not react emotionally?</p>
-    </div>
-    <div class="option" onclick="showOptions('options61')">
-        <p>How do I feel more and react emotionally?</p>
-    </div>
-    <div class="option" onclick="showOptions('options61')">
-        <p>What is 'intiution' and how do I use it more in my life?</p>
-    </div>
-</div>
-
-    <div class="options" id="options2">
-        <div class="line"></div>
-        <div class="option" onclick="showVideo('https://www.youtube.com/embed/N19q5L-20qA')">
-            <p>But it's a dog eat dog world, dogg</p>
-        </div>
-        <div class="option" onclick="showOptions('options22')">
-            <p>I prefer not to overthink it</p>
-        </div>
-        <div class="option" onclick="showOptions('options23')">
-            <p>I'm doubting myself now - maybe not <b>everything</b> is great</p>
-        </div>
-        <div class="option" onclick="showOptions('options24')">
-            <p>Why do <b>you</b> care?</p>
-        </div>
-        <div class="option" onclick="showOptions('options21')">
-            <p>Would you like to change them?</p>
-        </div>
-        <div class="option" onclick="showOptions('options25')">
-            <p>Why are you still clicking sentences?</p>
-        </div>
-    </div>
-
-    <div class="options" id="options3">
-            <div class="line"></div>
-            <div class="option" onclick="showOptions('options31')">
-                <p>Things don't suck for me</p>
+        <div class="tree">
+            <div class="node" onclick="showOptions('options1')">
+                <p>Hi there : It's okay</p>
+                <p>... but some things suck, right?</p>
             </div>
-            <div class="option" onclick="showOptions('options32')">
-                <p>Things don't suck for others</p>
-            </div>
-        <!--Allergic to bullshit-->
-        <div class="option" onclick="showVideo('https://www.youtube.com/embed/yGVWvApjCZ0')">
-                <p>Everything is perfectly balanced, we don't need to intervene</p>
-            </div>
-    </div>
+            <div class="video-container" id="videoContainer"></div>
 
-        <div class="options" id="options31">
+
+            <div class="options" id="options1">
+                <div class="line"></div>
+                <!--I trust your judgement-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/eKUuDRXtfPc')">
+                    <p>You're gonna limit me to 8 options Ant?</p>
+                </div>
+                <div class="option" onclick="showOptions('options3')">
+                    <p>I disagree, some things <b>don't</b> suck</p>
+                </div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/WNqkQrHj_ac')">
+                    <p>Am I ready for what you're about to tell me?</p>
+                </div>
+                <div class="option" onclick="showOptions('options2')">
+                    <p>I agree, some things suck</p>
+                </div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/jTsTUnCVqk0')">
+                    <p>Why am I here?</p>
+                </div>
+                <div class="option" onclick="showOptions('options4')">
+                    <p>I am ready to ask the right questions</p>
+                </div>
+                <!--Interactions haven't been entirely normal, wouldn't you agree-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/KovQrs2g7gQ')">
+                    <p>This is weird...</p>
+                </div>
+                <!--That detective is the right question-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/7dKW99Ct5Kw')">
+                    <p>Shouldn't we just stop asking questions? It just 'is' - we should just 'be' - we should think
+                        more intuitively, live more humanely</p>
+                </div>
+            </div>
+
+            <div class="options" id="options4">
+                <div class="line"></div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/89-2RE5XAOA')">
+                    <p>"The others"</p>
+                </div>
+                <div class="option" onclick="showOptions('options40')">
+                    <p>What's the point of life?</p>
+                </div>
+                <div class="option" onclick="showOptions('options41')">
+                    <p>What is this voice inside my head?</p>
+                </div>
+                <div class="option" onclick="showOptions('options42')">
+                    <p>Who, or what, made 'all of this'?</p>
+                </div>
+                <div class="option" onclick="showOptions('options43')">
+                    <p>What do you wish you knew when you were my age?</p>
+                </div>
+                <div class="option" onclick="showOptions('options44')">
+                    <p>How do I become a light in this increasingly dark world?</p>
+                </div>
+                <div class="option" onclick="showOptions('options45')">
+                    <p>How can I become happier?</p>
+                </div>
+                <div class="option" onclick="showOptions('options46')">
+                    <p>How do I find my purpose? My true calling</p>
+                </div>
+                <div class="option" onclick="showOptions('options47')">
+                    <p>How do I connect more with the world around me?</p>
+                </div>
+                <div class="option" onclick="showOptions('options48')">
+                    <p>How do I reach my full potential, not half or a quarter?</p>
+                </div>
+                <div class="option" onclick="showOptions('options49')">
+                    <p>How do I make more time to focus on the important things?</p>
+                </div>
+                <div class="option" onclick="showOptions('options50')">
+                    <p>How do I find more love to give?</p>
+                </div>
+                <div class="option" onclick="showOptions('options51')">
+                    <p>How do I seek out the truth of the world around me?</p>
+                </div>
+                <div class="option" onclick="showOptions('options52')">
+                    <p>How do I find more more time to pursue my passions?</p>
+                </div>
+                <div class="option" onclick="showOptions('options53')">
+                    <p>I see myself in others - what is this?</p>
+                </div>
+                <div class="option" onclick="showOptions('options54')">
+                    <p>How do I start asking the right questions, looking in the right directions?</p>
+                </div>
+                <div class="option" onclick="showOptions('options55')">
+                    <p>What's the point of emotions?</p>
+                </div>
+                <div class="option" onclick="showOptions('options56')">
+                    <p>Why do humans need "good vibes and lekker energy"?</p>
+                </div>
+                <div class="option" onclick="showOptions('options57')">
+                    <p>What is wealth?</p>
+                </div>
+                <div class="option" onclick="showOptions('options58')">
+                    <p>How do I learn more of the things that really matter in life?</p>
+                </div>
+                <div class="option" onclick="showOptions('options59')">
+                    <p>What is A.I?</p>
+                </div>
+                <div class="option" onclick="showOptions('options60')">
+                    <p>How do I feel less and not react emotionally?</p>
+                </div>
+                <div class="option" onclick="showOptions('options61')">
+                    <p>How do I feel more and react emotionally?</p>
+                </div>
+                <div class="option" onclick="showOptions('options61')">
+                    <p>What is 'intiution' and how do I use it more in my life?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options2">
+                <div class="line"></div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/N19q5L-20qA')">
+                    <p>But it's a dog eat dog world, dogg</p>
+                </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>I prefer not to overthink it</p>
+                </div>
+                <div class="option" onclick="showOptions('options23')">
+                    <p>I'm doubting myself now - maybe not <b>everything</b> is great</p>
+                </div>
+                <div class="option" onclick="showOptions('options24')">
+                    <p>Why do <b>you</b> care?</p>
+                </div>
+                <div class="option" onclick="showOptions('options21')">
+                    <p>Would you like to change them?</p>
+                </div>
+                <div class="option" onclick="showOptions('options25')">
+                    <p>Why are you still clicking sentences?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options3">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options31')">
+                    <p>Things don't suck for me</p>
+                </div>
+                <div class="option" onclick="showOptions('options32')">
+                    <p>Things don't suck for others</p>
+                </div>
+                <!--Allergic to bullshit-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/yGVWvApjCZ0')">
+                    <p>Everything is perfectly balanced, we don't need to intervene</p>
+                </div>
+            </div>
+
+            <div class="options" id="options31">
                 <div class="line"></div>
                 <div class="option" onclick="showOptions('options33')">
                     <p>Okay, so maybe you can do some thing for others?</p>
@@ -492,437 +542,437 @@ html {
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
                     <p>Just leave me alone Ant - this isn't fun</p>
                 </div>
+            </div>
+
+            <div class="options" id="options34">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options4')">
+                    <p>There are probably many things I should be addressing in my life</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>It's easier addressing other peoples problems than solving mine - maybe I'll figure it out in the
+                        process</p>
+                </div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>Just leave me alone Ant - this isn't fun</p>
+                </div>
+            </div>
+
+            <div class="options" id="options32">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>You think others 'have it better' than you? Perhaps you'd like to be proven wrong?</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Or maybe you just don't know what they're going through?</p>
+                </div>
+                <!--What do you want from me-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>I do not want to know or <b>see</b> more Ant</p>
+                </div>
+            </div>
+
+            <div class="options" id="options33">
+                <div class="line"></div>
+                <div class="option">
+                    <p><a href="https://www.news.uct.ac.za/article/-2017-06-22-red-winged-starling-project">UCT starlings - A bird in the hand is worth two on campus</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.philosophyschool.com/">School of Philosophy - Because asking the right questions leads to more questions...</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://sugarbird.org.za/like-minded-groups/">SugarBird - Join the fight against aliens</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.nsri.org.za/forms/sea-rescue-volunteer">NSRI - Water in the human body is important, but a human body in water is importanter</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.habitat.org/where-we-work/africa">Habitat for Humanity - 'Belonging' is important - but only if you have shelter first</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://vws.org.za/">VWS - Fire for our braais is lekker, but fire outside our braais is not so lekker</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://codeyourfuture.io/regions/">Code Your Future - Wouldn't it be cool to help other people code cool sh#t like this?</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://sanccob.co.za/get-involved/">SANCOB - More birds that need our help... helpless little things</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://seashepherd.org/get-involved/">Sea Shepherd - the most badass group of conservationists</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://tears.org.za/volunteer-at-tears/">TEARS - Finally something that's not about birds</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.sadag.org/index.php?option=com_content&view=article&id=3145&Itemid=511">SADAG - because your mind is also your home</a>
+                    </p>
+                </div>
+                <div class="option">
+                    <p><a href="https://lifelinesa.co.za/volunteer/">Lifeline - because SADAG has their hands full, let's throw them a lifeline</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://ched.uct.ac.za/dot4d">UCT OpenEducation - Where did you get your knowledge from? Why do you think you own it then?</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.msf.org.za/">Doctors without borders - The 'organic mechanics' working tirelessly to relieve human suffering</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.mercyships.org/get-involved/volunteer/">Mercy Ships - because the 'organic mechanics' need to reach more people faster</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://careers.unesco.org/go/Internships-and-volunteers/783902/">UNESCO - a big place dedicated to the 'good stuff'</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.unicef.org/southafrica/volunteer">UNICEF - see above</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.linkedin.com/company/ewbsa/?originalSubdomain=za">Engineers Without Borders - like the 'organic mechanics', except these guys are just mechanics</a></p>
+                </div>
+                <div class="option">
+                    <p><a href="https://www.google.com">The world is your oyster...</a></p>
+                </div>
+            </div>
+
+
+            <div class="options" id="options21">
+                <div class="line"></div>
+                <!--What do you want from me-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>No</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Yes</p>
+                </div>
+                <div class="option" onclick="showOptions('options2c')">
+                    <p>Maybe</p>
+                </div>
+                <div class="option" onclick="showVideo('War and pollution.mp4')">
+                    <p>Does the world need my help?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options215">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options217')">
+                    <p>'Enough' will become apparent, once you reach it</p>
+                </div>
+                <div class="option" onclick="showOptions('options218')">
+                    <p>Is there an easier way?</p>
+                </div>
+                <div class="option" onclick="showOptions('options219')">
+                    <p>I'm tired, I can't keep grinding away like this anymore</p>
+                </div>
+            </div>
+
+            <div class="options" id="options219">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options220')">
+                    <p>Take a break - we're all in this for the long-haul</p>
+                </div>
+                <div class="option" onclick="showOptions('options221')">
+                    <p>Is it comforting to know that <b>nobody</b> survives life?</p>
+                </div>
+                <div class="option" onclick="showOptions('options222')">
+                    <p>Are you spreading yourself too thin?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options2c">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Maybe... your life could do with more decisive action?</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Maybe... you need a broadening of perspectives to know your purpose?</p>
+                </div>
+                <!--What do you want from me-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>Please stop, I don't like intense introspection like this</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Maybe... I'm expecting others to do for me - yet I will not do for others?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options22">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options221')">
+                    <p>You prefer not to think about... life?</p>
+                </div>
+                <div class="option" onclick="showOptions('options222')">
+                    <p>You prefer not to think about... problems?</p>
+                </div>
+                <div class="option" onclick="showOptions('options223')">
+                    <p>I prefer not to think. Fullstop, Ant.</p>
+                </div>
+            </div>
+
+            <div class="options" id="options221">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I'm petrified of being vulnerable</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I'm lost, confused and don't want to think about it</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I am comfortable where I am - but I would like to be braver</p>
+                </div>
+            </div>
+
+            <div class="options" id="options222">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Problems are fleeting - unwaivering collective action is forever</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I think about problems a lot - but don't know how to get involved</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I alone am powerless, I've tried and failed before, I've given up</p>
+                </div>
+            </div>
+
+            <div class="options" id="options223">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>A free mind, unburdened by thought, is one available for the greater good</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>... and idle hands call out for tools</p>
+                </div>
+                <!--What do you want from me-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>I'd prefer to have been born a sloth - leave me alone to sleep, Ant</p>
+                </div>
+            </div>
+
+            <div class="options" id="options23">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>Always leave room for self-doubt. You don't know everything.</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>...But I hate being filled with self-doubt. I wish I was more confident in my choices</p>
+                </div>
+                <!--What do you want from me-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
+                    <p>What if I just stay on the fence, Ant?</p>
+                </div>
+            </div>
+
+            <div class="options" id="options24">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I care because sooner or later someone will care for me, and me for them</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I care, because you care - maybe not now. But you will be called to care</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I care because without compassion and empathy, we should count ourselves umongst the machines</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I care because if nothing else, we have each other</p>
+                </div>
+            </div>
+
+            <div class="options" id="options25">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I don't know why I am still here... on Earth</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I don't know why I am still here... on this ridiculous website</p>
+                </div>
+                <div class="option" onclick="showOptions('options33')">
+                    <p>I know you, and am curious about where this is all going</p>
+                </div>
+                <!--Dumbest smart person-->
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/XFRewZImtl8')">
+                    <p>I like clicking things</p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="options" id="options34">
-            <div class="line"></div>
-            <div class="option" onclick="showOptions('options4')">
-                <p>There are probably many things I should be addressing in my life</p>
-            </div>
-            <div class="option" onclick="showOptions('options33')">
-                <p>It's easier addressing other peoples problems than solving mine - maybe I'll figure it out in the process</p>
-            </div>
-            <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                <p>Just leave me alone Ant - this isn't fun</p>
-            </div>
-    </div>
-
-        <div class="options" id="options32">
-            <div class="line"></div>
-            <div class="option" onclick="showOptions('options33')">
-                <p>You think others 'have it better' than you? Perhaps you'd like to be proven wrong?</p>
-            </div>
-            <div class="option" onclick="showOptions('options33')">
-                <p>Or maybe you just don't know what they're going through?</p>
-            </div>
-                    <!--What do you want from me-->
-                    <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                        <p>I do not want to know or <b>see</b> more Ant</p>
-            </div>
-        </div>
-
-        <div class="options" id="options33">
-            <div class="line"></div>
-            <div class="option">
-                <p><a href="https://www.news.uct.ac.za/article/-2017-06-22-red-winged-starling-project">UCT red-winged starling project</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.philosophyschool.com/">School of practical philosophy</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://sugarbird.org.za/like-minded-groups/">Join the fight against aliens</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.nsri.org.za/forms/sea-rescue-volunteer">National Sea Rescue Institute</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.habitat.org/where-we-work/africa">Habitat for Humanity</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://vws.org.za/">Volunteer Wildfire Services</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://codeyourfuture.io/regions/">Code your future</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://sanccob.co.za/get-involved/">SANCOB</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://seashepherd.org/get-involved/">Sea Shepherd</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://tears.org.za/volunteer-at-tears/">TEARS</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.sadag.org/index.php?option=com_content&view=article&id=3145&Itemid=511">SADAG</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://lifelinesa.co.za/volunteer/">Lifeline</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://ched.uct.ac.za/dot4d">UCT OpenEducation</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.msf.org.za/">Doctors without borders</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.mercyships.org/get-involved/volunteer/">Mercy Ships</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://careers.unesco.org/go/Internships-and-volunteers/783902/">UNESCO</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.unicef.org/southafrica/volunteer">UNICEF</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.linkedin.com/company/ewbsa/?originalSubdomain=za">Engineers Without Borders</a></p>
-            </div>
-            <div class="option">
-                <p><a href="https://www.google.com">The world is your oyster...</a></p>
-            </div>
-        </div>
-
-
-                            <div class="options" id="options21">
-                                <div class="line"></div>
-                                                    <!--What do you want from me-->
-                                                    <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                                                        <p>No</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Yes</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options2c')">
-                                    <p>Maybe</p>
-                                </div>
-                                <div class="option" onclick="showVideo('War and pollution.mp4')">
-                                    <p>Does the world need my help?</p>
-                                </div>
-                            </div>
-
-                           
-                          
-
-                            <div class="options" id="options215">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options217')">
-                                    <p>'Enough' will become apparent, once you reach it</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options218')">
-                                    <p>Is there an easier way?</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options219')">
-                                    <p>I'm tired, I can't keep grinding away like this anymore</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options219">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options220')">
-                                    <p>Take a break - we're all in this for the long-haul</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options221')">
-                                    <p>Is it comforting to know that <b>nobody</b> survives life?</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options222')">
-                                    <p>Are you spreading yourself too thin?</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options2c">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Maybe... your life could do with more decisive action?</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Maybe... you need a broadening of perspectives to know your purpose?</p>
-                                </div>
-                                                    <!--What do you want from me-->
-                                                    <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                                                        <p>Please stop, I don't like intense introspection like this</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Maybe... I'm expecting others to do for me - yet I will not do for others?</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options22">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options221')">
-                                    <p>You prefer not to think about... life?</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options222')">
-                                    <p>You prefer not to think about... problems?</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options223')">
-                                    <p>I prefer not to think. Fullstop, Ant.</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options221">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I'm petrified of being vulnerable</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I'm lost, confused and don't want to think about it</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I am comfortable where I am - but I would like to be braver</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options222">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Problems are fleeting - unwaivering collective action is forever</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I think about problems a lot - but don't know how to get involved</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I alone am powerless, I've tried and failed before, I've given up</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options223">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>A free mind, unburdened by thought, is one available for the greater good</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>... and idle hands call out for tools</p>
-                                </div>
-                                                    <!--What do you want from me-->
-                                                    <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                                                        <p>I'd prefer to have been born a sloth - leave me alone to sleep, Ant</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options23">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>Always leave room for self-doubt. You don't know everything.</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>...But I hate being filled with self-doubt. I wish I was more confident in my choices</p>
-                                </div>
-                                                    <!--What do you want from me-->
-                                                    <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                                                        <p>What if I just stay on the fence, Ant?</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options24">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I care because sooner or later someone will care for me, and me for them</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I care, because you care - maybe not now. But you will be called to care</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I care because without compassion and empathy, we should count ourselves umongst the machines</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I care because if nothing else, we have each other</p>
-                                </div>
-                            </div>
-
-                            <div class="options" id="options25">
-                                <div class="line"></div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I don't know why I am still here... on Earth</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I don't know why I am still here... on this ridiculous website</p>
-                                </div>
-                                <div class="option" onclick="showOptions('options33')">
-                                    <p>I know you, and am curious about where this is all going</p>
-                                </div>
-                                                    <!--Dumbest smart person-->
-                                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
-                                <p>I like clicking things</p>
-                                </div>
-                            </div>
-
-    </div>
 
     </div>
     <p><a href="https://1drv.ms/w/s!AvskFMLY4m68gQh9ojn7Br6tqK09?e=Ihipb0" target="_blank">
-        <i>Coded by A.I, worded by humans &copy;<i> 2024</i></a></p>
+            <i>Coded by A.I, worded by humans you probably know &copy;<i> 2024</i></a></p>
 
     <!-- Feedback Icon -->
     <div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
 
-   <!-- Feedback Form -->
-   <div id="feedback-form">
-    <form id="feedbackForm">
-        <h2>Please share your experience!</h2>
-        <p>Words I most closely associate with my experience:</p>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Interesting"> Interesting
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Scary"> Scary
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Curious"> Curious
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Painful"> Painful
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Confusing"> Confusing
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Exciting"> Exciting
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Inspiring"> Inspiring
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Lost - Just Lost"> Lost - Just Lost
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Fun"> Fun
-        </label><br>
-        <label>
-            <input type="checkbox" name="feedbackCategory" value="Funny"> Funny
-        </label><br>
-        <textarea id="feedbackText" placeholder="Enter your feedback here"></textarea><br>
-        <button type="submit">Send</button>
-        <button type="button" onclick="toggleFeedbackForm()">Close</button>
-    </form>
+    <!-- Feedback Form -->
+    <div id="feedback-form">
+        <form id="feedbackForm">
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Interesting"> Interesting
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Scary"> Scary
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Curious"> Curious
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Painful"> Painful
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Confusing"> Confusing
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Exciting"> Exciting
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Inspiring"> Inspiring
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Lost - Just Lost"> Lost - Just Lost
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Fun"> Fun
+            </label>
+            <label>
+                <input type="checkbox" name="feedbackCategory" value="Funny"> Funny
+            </label>
+            <p>Comments, causes you'd like to add, or branches of options you've engineered for me &#128522</p>
+            <textarea id="feedbackText" placeholder="Enter your feedback here"></textarea>
+            <button type="submit">Send</button>
+            <button type="button" onclick="toggleFeedbackForm()">Close</button>
+        </form>
 
-    <script>
- // Show the popup container when the page loads
- window.onload = function() {
-        document.getElementById('popupContainer').style.display = "block";
-    };
+        <script>
 
-    // Close the popup when the user clicks on <span> (x)
-    document.getElementById('closeBtn').onclick = function() {
-        document.getElementById('popupContainer').style.display = "none";
-    };
+            // Show the popup container when the page loads
+            window.onload = function () {
+                document.getElementById('popupContainer').style.display = "block";
+            };
 
-    // Function to show the video in the iframe
-    function showVideo(videoUrl) {
-        document.getElementById('videoPlayer').src = videoUrl;
-    }
-function showVideo(videoUrl) {
-        console.log("showVideo function called with URL:", videoUrl);
-        
-        // Create the iframe element
-        var iframe = document.createElement('iframe');
-        iframe.width = "auto";
-        iframe.height = "auto";
-        iframe.src = videoUrl;
-        iframe.title = "YouTube video player";
-        iframe.frameBorder = "0";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        iframe.allowFullscreen = true;
+            // Close the popup when the user clicks on <span> (x)
+            document.getElementById('closeBtn').onclick = function () {
+                document.getElementById('popupContainer').style.display = "none";
+            };
 
-        // Append the iframe to the videoContainer
-        var videoContainer = document.getElementById('videoContainer');
-        videoContainer.innerHTML = ''; // Clear previous content
-        videoContainer.appendChild(iframe);
+            // Function to show the video in the iframe
+            function showVideo(videoUrl) {
+                document.getElementById('videoPlayer').src = videoUrl;
+            }
+            function showVideo(videoUrl) {
+                console.log("showVideo function called with URL:", videoUrl);
 
-        // Add a close button after showing the video
-        var closeButton = document.createElement('button');
-        closeButton.textContent = 'Okay?';
-        closeButton.onclick = closeVideo;
-        videoContainer.appendChild(closeButton);
-    }
+                // Create the iframe element
+                var iframe = document.createElement('iframe');
+                iframe.width = "auto";
+                iframe.height = "auto";
+                iframe.src = videoUrl;
+                iframe.title = "YouTube video player";
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.referrerPolicy = "strict-origin-when-cross-origin";
+                iframe.allowFullscreen = true;
 
-    function closeVideo() {
-        var videoContainer = document.getElementById('videoContainer');
-        videoContainer.innerHTML = ''; // Remove the iframe and button
-    }
+                // Append the iframe to the videoContainer
+                var videoContainer = document.getElementById('videoContainer');
+                videoContainer.innerHTML = ''; // Clear previous content
+                videoContainer.appendChild(iframe);
 
-
-     // Function to show the video in the iframe
-     function showVideo2(videoUrl) {
-        document.getElementById('videoPlayer').src = videoUrl;
-    }
-function showVideo2(videoUrl) {
-        console.log("showVideo function called with URL:", videoUrl);
-        
-        // Create the iframe element
-        var iframe = document.createElement('iframe');
-        iframe.width = "auto";
-        iframe.height = "auto";
-        iframe.src = videoUrl;
-        iframe.title = "YouTube video player";
-        iframe.frameBorder = "0";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        iframe.allowFullscreen = true;
-
-        // Append the iframe to the videoContainer2
-        var videoContainer2 = document.getElementById('videoContainer2');
-        videoContainer2.innerHTML = ''; // Clear previous content
-        videoContainer2.appendChild(iframe);
-
-        // Add a close button after showing the video
-        var closeButton = document.createElement('button');
-        closeButton.textContent = 'Okay?';
-        closeButton.onclick = closeVideo2;
-        videoContainer2.appendChild(closeButton);
-    }
-   
-        let currentSubOptions = null;
-
-        function showOptions(id) {
-            // Hide currently displayed sub-options if there are any
-            if (currentSubOptions && currentSubOptions !== id) {
-                document.getElementById(currentSubOptions).style.display = 'none';
+                // Add a close button after showing the video
+                var closeButton = document.createElement('button');
+                closeButton.textContent = 'Okay?';
+                closeButton.onclick = closeVideo;
+                videoContainer.appendChild(closeButton);
             }
 
-            // Show the selected options
-            const selectedOptions = document.getElementById(id);
-            selectedOptions.style.display = 'block';
-            
-            // Update current sub-options tracker
-            currentSubOptions = id;
-        }
-   // Toggle Feedback Form
-function toggleFeedbackForm() {
-    const feedbackForm = document.getElementById('feedback-form');
-    feedbackForm.style.display = feedbackForm.style.display === 'none' || feedbackForm.style.display === '' ? 'block' : 'none';
-}
+            function closeVideo() {
+                var videoContainer = document.getElementById('videoContainer');
+                videoContainer.innerHTML = ''; // Remove the iframe and button
+            }
 
-// Handle Form Submission
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const feedbackText = document.getElementById('feedbackText').value;
-    const feedbackCategories = Array.from(document.querySelectorAll('input[name="feedbackCategory"]:checked'))
-                                    .map(checkbox => checkbox.value)
-                                    .join(', ');
 
-    if (feedbackText || feedbackCategories) {
-        sendFeedback(feedbackCategories, feedbackText);
-    } else {
-        alert('Please enter your feedback or select a category.');
-    }
-});
+            // Function to show the video in the iframe
+            function showVideo2(videoUrl) {
+                document.getElementById('videoPlayer').src = videoUrl;
+            }
+            function showVideo2(videoUrl) {
+                console.log("showVideo function called with URL:", videoUrl);
 
-// Send Feedback
-function sendFeedback(categories, feedback) {
-    emailjs.send("service_8bm44di", "template_ek9nzr8", {
-        categories: categories,
-        message: feedback
-    }).then(function(response) {
-        alert('Feedback sent successfully!');
-        document.getElementById('feedbackForm').reset();
-        toggleFeedbackForm();
-    }, function(error) {
-        alert('Failed to send feedback.');
-    });
-}
+                // Create the iframe element
+                var iframe = document.createElement('iframe');
+                iframe.width = "auto";
+                iframe.height = "auto";
+                iframe.src = videoUrl;
+                iframe.title = "YouTube video player";
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.referrerPolicy = "strict-origin-when-cross-origin";
+                iframe.allowFullscreen = true;
 
-    </script>
+                // Append the iframe to the videoContainer2
+                var videoContainer2 = document.getElementById('videoContainer2');
+                videoContainer2.innerHTML = ''; // Clear previous content
+                videoContainer2.appendChild(iframe);
+
+                // Add a close button after showing the video
+                var closeButton = document.createElement('button');
+                closeButton.textContent = 'Okay?';
+                closeButton.onclick = closeVideo2;
+                videoContainer2.appendChild(closeButton);
+            }
+
+            let currentSubOptions = null;
+
+            function showOptions(id) {
+                // Hide currently displayed sub-options if there are any
+                if (currentSubOptions && currentSubOptions !== id) {
+                    document.getElementById(currentSubOptions).style.display = 'none';
+                }
+
+                // Show the selected options
+                const selectedOptions = document.getElementById(id);
+                selectedOptions.style.display = 'block';
+
+                // Update current sub-options tracker
+                currentSubOptions = id;
+            }
+            // Toggle Feedback Form
+            function toggleFeedbackForm() {
+                const feedbackForm = document.getElementById('feedback-form');
+                feedbackForm.style.display = feedbackForm.style.display === 'none' || feedbackForm.style.display === '' ? 'block' : 'none';
+            }
+
+            // Handle Form Submission
+            document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const feedbackText = document.getElementById('feedbackText').value;
+                const feedbackCategories = Array.from(document.querySelectorAll('input[name="feedbackCategory"]:checked'))
+                    .map(checkbox => checkbox.value)
+                    .join(', ');
+
+                if (feedbackText || feedbackCategories) {
+                    sendFeedback(feedbackCategories, feedbackText);
+                } else {
+                    alert('Please enter your feedback or select a category.');
+                }
+            });
+
+            // Send Feedback
+            function sendFeedback(categories, feedback) {
+                emailjs.send("service_8bm44di", "template_ek9nzr8", {
+                    categories: categories,
+                    message: feedback
+                }).then(function (response) {
+                    alert('Feedback sent successfully!');
+                    document.getElementById('feedbackForm').reset();
+                    toggleFeedbackForm();
+                }, function (error) {
+                    alert('Failed to send feedback.');
+                });
+            }
+
+        </script>
 </body>
+
 </html>
