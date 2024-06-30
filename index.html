@@ -25,6 +25,10 @@
     </script>
 
     <style>
+        h3:hover{
+            transform:scale(1.04);
+
+        }
         .container {
             display: flex;
         }
@@ -306,6 +310,7 @@
             color: black;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
+            font-size: 0.65rem;
         }
 
         #feedback-form h2 {
@@ -806,6 +811,7 @@
 
     <!-- Feedback Form -->
     <div id="feedback-form">
+        <p>Anonymous feedback - because being vulnerable can be scary</p>
         <form id="feedbackForm">
             <label>
                 <input type="checkbox" name="feedbackCategory" value="Interesting"> Interesting
@@ -829,7 +835,7 @@
                 <input type="checkbox" name="feedbackCategory" value="Inspiring"> Inspiring
             </label>
             <label>
-                <input type="checkbox" name="feedbackCategory" value="Lost - Just Lost"> Lost - Just Lost
+                <input type="checkbox" name="feedbackCategory" value="Lost - Just Lost"> Lost - Just lost dude
             </label>
             <label>
                 <input type="checkbox" name="feedbackCategory" value="Fun"> Fun
@@ -841,6 +847,7 @@
             <textarea id="feedbackText" placeholder="Enter your feedback here"></textarea>
             <button type="submit">Send</button>
             <button type="button" onclick="toggleFeedbackForm()">Close</button>
+            <p>Or email eyeconiccards@gmail.com &#9996;</p>
         </form>
 
         <script>
