@@ -851,6 +851,10 @@
                 </div>
 
                 <label>Text-To-Speech (at your own risk)<label>
+                    <label for="voiceSelect">Select Voice:</label>
+                    <select id="voiceSelect" onchange="updateSpeechSettings()">
+                        <option value="">Default</option>
+                    </select>
                 <button onclick="toggleSpeech()">Read Content</button>
 
 
@@ -1058,9 +1062,26 @@ let translateElementContainer = document.createElement('div');
 translateElementContainer.id = 'google_translate_element';
 translateElementContainer.style.display = 'none';
 document.body.appendChild(translateElementContainer);
-
 let isSpeaking = false;
         let speech;
+        let voices = [];
+
+        // Populate voices dropdown
+        window.speechSynthesis.onvoiceschanged = function() {
+            voices = window.speechSynthesis.getVoices();
+            populateVoicesDropdown();
+        };
+
+        function populateVoicesDropdown() {
+            const voiceDropdown = document.getElementById('voiceSelect');
+            voiceDropdown.innerHTML = '';
+            voices.forEach(voice => {
+                const option = document.createElement('option');
+                option.value = voice.name;
+                option.textContent = voice.name + ' (' + voice.lang + ')';
+                voiceDropdown.appendChild(option);
+            });
+        }
 
         // Function to toggle speech reading
         function toggleSpeech() {
@@ -1079,9 +1100,12 @@ let isSpeaking = false;
             speech.volume = 1;
             speech.rate = 1;
             speech.pitch = 1;
+            let selectedVoice = voices.find(voice => voice.name === document.getElementById('voiceSelect').value);
+            if (selectedVoice) {
+                speech.voice = selectedVoice;
+            }
             window.speechSynthesis.speak(speech);
             isSpeaking = true;
-            // Toggle button text to indicate speech is active
             document.querySelector('button').textContent = 'Stop Reading';
         }
 
@@ -1091,8 +1115,20 @@ let isSpeaking = false;
                 window.speechSynthesis.cancel();
             }
             isSpeaking = false;
-            // Toggle button text to indicate speech is stopped
             document.querySelector('button').textContent = 'Start Reading';
+        }
+
+        // Function to update speech settings
+        function updateSpeechSettings() {
+            if (isSpeaking) {
+                stopSpeech();
+                startSpeech();
+            } else {
+                let speedValue = document.getElementById('speedInput').value;
+                document.getElementById('speedValue').textContent = speedValue;
+                let pitchValue = document.getElementById('pitchInput').value;
+                document.getElementById('pitchValue').textContent = pitchValue;
+            }
         }
         </script>
 </body>
