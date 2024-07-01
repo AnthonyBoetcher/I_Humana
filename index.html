@@ -392,7 +392,7 @@
 
         
 
-        <div class="tree">
+        <div class="tree" id="tree">
             <div class="node" onclick="showOptions('options1')">
                 <p>Hi there : It's okay</p>
                 <p>... but some things suck, right?</p>
@@ -850,6 +850,10 @@
                 </select>
                 </div>
 
+                <label>Text-To-Speech (at your own risk)<label>
+                <button onclick="toggleSpeech()">Read Content</button>
+
+
     <!-- Feedback Icon -->
     <div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
 
@@ -1055,7 +1059,41 @@ translateElementContainer.id = 'google_translate_element';
 translateElementContainer.style.display = 'none';
 document.body.appendChild(translateElementContainer);
 
+let isSpeaking = false;
+        let speech;
 
+        // Function to toggle speech reading
+        function toggleSpeech() {
+            if (!isSpeaking) {
+                startSpeech();
+            } else {
+                stopSpeech();
+            }
+        }
+
+        // Function to start speech
+        function startSpeech() {
+            let text = document.getElementById('tree').innerText;
+            speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+            isSpeaking = true;
+            // Toggle button text to indicate speech is active
+            document.querySelector('button').textContent = 'Stop Reading';
+        }
+
+        // Function to stop speech
+        function stopSpeech() {
+            if (speech && window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            isSpeaking = false;
+            // Toggle button text to indicate speech is stopped
+            document.querySelector('button').textContent = 'Start Reading';
+        }
         </script>
 </body>
 
