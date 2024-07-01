@@ -219,6 +219,11 @@
             }
         }
 
+        /* Ensure all .optionPopup elements show the pointer cursor on hover */
+.optionPopup:hover {
+    cursor: pointer;
+}
+
         .popup-container {
             display: none;
             /* Hidden by default */
@@ -353,43 +358,45 @@
 
 <body>
     <div class="background-pattern">
-        <p></p>
-
         <div id="popupContainer" class="popup-container">
             <div class="popup-content">
-                <h3><a target="_blank" style="text-decoration: none;" class='option'
-                        href="https://en.wikipedia.org/wiki/Everything#:~:text=Everything%2C%20every%2Dthing%2C%20or,it%20may%20refer%20to%20anything."><i>Everything</i></a>is
-                    <a target="_blank" style="text-decoration: none;" class='option'
-                        href="https://www.britannica.com/dictionary/interact">interactive,</a>for the <a
-                        style="text-decoration: none;" class='option'
-                        onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')">curious</a><a
-                        target="_blank" style="text-decoration: none;" class='option'
-                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us</a><a
-                        target="_blank" style="text-decoration: none;" class='option'
+                <h3>
+                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
+                        href="https://en.wikipedia.org/wiki/Everything#:~:text=Everything%2C%20every%2Dthing%2C%20or,it%20may%20refer%20to%20anything."><i>Everything</i></a> is
+                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
+                        href="https://www.britannica.com/dictionary/interact">interactive,</a> for the <a
+                        style="text-decoration: none;" class='optionPopup' data-clicked="false"
+                        onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')">curious</a>
+                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
+                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us</a>
+                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
                         href="https://www.britannica.com/video/186420/paradox-David-Hilbert-hotel">...</a>
                 </h3>
+                <p><i>To enter you must be a curious human being. Your current curiousity ranking is:</i></p><p id="counter" style="color: white;">0/8</p>
+                <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span>
+                <p style="color:black">
+                    <a target="_blank" style="color:black; text-decoration: none;" class='optionPopup' data-clicked="false"
+                        href="https://www.reddit.com/r/askphilosophy/comments/195lqb7/how_would_you_define_nothing/">....................................................................<br>................................................OOOPS - CAN YOU SEE THIS?...........................................<br>...............................................</a>
+                </p>
                 <div class="container">
-                    <div class="option" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')">
+                    <div class="optionPopup" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')" data-clicked="false">
                         <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
                     </div>
                     <div>
-                        <a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank">
+                        <a href="https://www.ancestry.com/first-name-meaning/humana" target="_blank" class='optionPopup' data-clicked="false">
                             <img src="Humana recaptcha.jpg" alt="Thumbnail" width="170vw" height="60vh">
                         </a>
                     </div>
-                    <div class='option'
-                        onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')">
+                    <div class='optionPopup' onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')" data-clicked="false">
                         <img src="recaptcha.png" alt="Recaptcha" width="60vw" height="60vw">
                     </div>
                 </div>
                 <div class="video-container2" id="videoContainer2"></div>
-                <span class="close" id="closeBtn">Close &times;</span>
-                <p style="color:black"><a target="_blank" style="color:black; text-decoration: none;" class='option'
-                        href="https://www.reddit.com/r/askphilosophy/comments/195lqb7/how_would_you_define_nothing/">....................................................................<br>................................................NOTHING...........................................<br>...............................................</a>
-                </p>
+                
                 <p style="text-align: left;">Everything from 29/06/2024 onwards has been contributed by other human beings. There is no selectivity in content, it is unconditionally <i>OURS</i> - contribute responsibly 😊</p>
             </div>
         </div>
+        
 
         <div class="tree" id="tree">
             <div class="node" onclick="showOptions('options1')">
@@ -908,9 +915,45 @@
             };
 
             // Close the popup when the user clicks on <span> (x)
-            document.getElementById('closeBtn').onclick = function () {
-                document.getElementById('popupContainer').style.display = "none";
-            };
+                document.getElementById('closeBtn').onclick = function () {
+    document.getElementById('popupContainer').style.display = "none";
+};
+
+// Select all clickable elements within the popup container with class 'optionPopup'
+const popupContainer = document.getElementById('popupContainer');
+const clickableElements = popupContainer.querySelectorAll('.optionPopup');
+
+// Counter element
+const counterElement = document.getElementById('counter');
+
+// Function to update the counter display
+function updateCounter() {
+    const clickedCount = Array.from(clickableElements).filter(element => element.dataset.clicked === 'true').length;
+    counterElement.textContent = `${clickedCount}/${clickableElements.length}`;
+}
+
+// Function to check if all elements are clicked
+function checkAllClicked() {
+    const allClicked = Array.from(clickableElements).every(element => element.dataset.clicked === 'true');
+    if (allClicked) {
+        counterElement.style.display = 'none';  // Hide the counter
+        document.getElementById('closeBtn').style.display = 'block';  // Show the close button
+    }
+}
+
+// Add click event listeners to all clickable elements
+clickableElements.forEach(element => {
+    element.addEventListener('click', function () {
+        if (element.dataset.clicked !== 'true') {
+            element.dataset.clicked = 'true';
+            updateCounter();
+            checkAllClicked();
+        }
+    });
+});
+
+// Initialize the counter
+updateCounter();
 
             // Function to show the video in the iframe
             function showVideo(videoUrl) {
