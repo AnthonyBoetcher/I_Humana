@@ -390,6 +390,7 @@
             </div>
         </div>
 
+        
 
         <div class="tree">
             <div class="node" onclick="showOptions('options1')">
@@ -833,8 +834,25 @@
         </div>
 
     </div>
+   
     <p id="copyright"><a href="https://1drv.ms/w/s!AvskFMLY4m68gQh9ojn7Br6tqK09?e=Ihipb0" target="_blank">
             <i>Coded by A.I, worded by humans you probably know &copy;<i> 2024</i></a></p>
+            <div class="language-selector">
+                <label for="languages">Choose a language (at your own risk):</label>
+                <select id="languages">
+                    <option value="en">English</option>
+                    <option value="af">Afrikaans</option>
+                    <option value="nso">Northern Sotho</option>
+                    <option value="st">Southern Sotho</option>
+                    <option value="ss">Swati</option>
+                    <option value="tn">Tswana</option>
+                    <option value="ts">Tsonga</option>
+                    <option value="ve">Venda</option>
+                    <option value="xh">Xhosa</option>
+                    <option value="zu">Zulu</option>
+                    <option value="nr">Southern Ndebele</option>
+                </select>
+                </div>
 
     <!-- Feedback Icon -->
     <div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
@@ -1008,6 +1026,39 @@
                     alert('Failed to send feedback.');
                 });
             }
+
+            // Load Google Translate
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+// Append Google Translate script to the head
+let googleTranslateScript = document.createElement('script');
+googleTranslateScript.type = 'text/javascript';
+googleTranslateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+document.head.appendChild(googleTranslateScript);
+
+// Function to change the language
+function changeLanguage(language) {
+    let translateElement = document.querySelector('.goog-te-combo');
+    if (translateElement) {
+        translateElement.value = language;
+        translateElement.dispatchEvent(new Event('change'));
+    }
+}
+
+// Event listener for the language selector
+document.getElementById('languages').addEventListener('change', function() {
+    let selectedLanguage = this.value;
+    changeLanguage(selectedLanguage);
+});
+
+// Add a hidden div for Google Translate
+let translateElementContainer = document.createElement('div');
+translateElementContainer.id = 'google_translate_element';
+translateElementContainer.style.display = 'none';
+document.body.appendChild(translateElementContainer);
+
 
         </script>
 </body>
