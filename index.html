@@ -353,6 +353,19 @@
         #feedback-form input[type="checkbox"] {
             margin-right: 10px;
         }
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
     </style>
 </head>
 
@@ -368,16 +381,11 @@
                         style="text-decoration: none;" class='optionPopup' data-clicked="false"
                         onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')">curious</a>
                     <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us</a>
-                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://www.britannica.com/video/186420/paradox-David-Hilbert-hotel">...</a>
+                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us...</a>
                 </h3>
                 <p><i>To enter you must be a curious human being. Your current curiosity ranking is:</i></p><p id="counter" style="color: white;">0/8</p>
                 <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span>
-                <p style="color:black">
-                    <a target="_blank" style="color:black; text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://www.reddit.com/r/askphilosophy/comments/195lqb7/how_would_you_define_nothing/">....................................................................<br>................................................OOOPS - CAN YOU SEE THIS?...........................................<br>...............................................</a>
-                </p>
+                
                 <div class="container">
                     <div class="optionPopup" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')" data-clicked="false">
                         <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
@@ -863,6 +871,7 @@
                 <button onclick="toggleSpeech()">Read Content</button>
 
 
+
     <!-- Feedback Icon -->
     <div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
 
@@ -1171,6 +1180,7 @@ let isSpeaking = false;
                 document.getElementById('pitchValue').textContent = pitchValue;
             }
         }
+
         </script>
 </body>
 
