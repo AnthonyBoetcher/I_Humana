@@ -297,12 +297,12 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: #007bff;
     color: white;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
@@ -448,7 +448,8 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover, .info-button:hover, #feedback-icon:hover
+ {
     background-color: #0056b3;
 }
     </style>
@@ -457,18 +458,12 @@ button:hover {
 <body>
     
     <div class="background-pattern">
+        
         <div id="popupContainer" class="popup-container">
             <!---->
             <div class="popup-content">
                 <h3>
-                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://en.wikipedia.org/wiki/Everything#:~:text=Everything%2C%20every%2Dthing%2C%20or,it%20may%20refer%20to%20anything."><i>Everything</i></a> is
-                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://www.britannica.com/dictionary/interact">interactive,</a> for the <a
-                        style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        onclick="showVideo2('https://www.youtube.com/embed/UjEngEpiJKo?si=Wui1flwGvr7bp9-7')">curious</a>
-                    <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
-                        href="https://www.businessinsider.com/guides/tech/what-is-among-us">among us...</a>
+                    <i>Everything</i> is interactive, for the curious among us...
                 </h3>
                 <p><i>To enter you must be a curious human being. Your current curiosity ranking is:</i></p><p id="counter" style="color: white;">0/8</p>
                 <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span>
@@ -1209,7 +1204,7 @@ button:hover {
 <!-- Feedback Form -->
 <div id="feedback-form">
     <h2>Contribute to I, Humana</h2>
-    <p>How would you like to design the journey?</p>
+    <p>How would you like to design the journey?:</p>
     <form id="setupForm">
         <label>
             Number of branches:
