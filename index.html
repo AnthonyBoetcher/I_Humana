@@ -452,6 +452,15 @@ button:hover, .info-button:hover, #feedback-icon:hover
  {
     background-color: #0056b3;
 }
+
+
+#searchInput {
+    width: calc(100% - 20px); /* Adjust padding */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin-top: 10px; /* Adjust margin as needed */
+    /* Additional styling for search input */
+}
     </style>
 </head>
 
@@ -466,8 +475,9 @@ button:hover, .info-button:hover, #feedback-icon:hover
                     <i>Everything</i> is interactive, for the curious among us...
                 </h3>
                 <p><i>To enter you must be a curious human being. Your current curiosity ranking is:</i></p><p id="counter" style="color: white;">0/8</p>
+                <br>
                 <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span>
-                
+                <br>
                 <div class="container">
                     <div class="optionPopup" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')" data-clicked="false">
                         <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
@@ -493,6 +503,7 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 <p>Hi there : It's okay</p>
                 <p>... but some things suck, right?</p>
             </div>
+
             <div class="video-container" id="videoContainer"></div>
 
 
@@ -1151,10 +1162,12 @@ button:hover, .info-button:hover, #feedback-icon:hover
                     <p>&#x21B1; Up one level</p>
                 </div>
             </div>
-
+            <p style="font-size: 0.7rem"><i>&#9757; Hint: please don't stop being curious now, we're just getting started... &#9757; </i></p>
+            <input type="text" id="searchInput" onkeyup="searchOptions()" placeholder="Search..">
         </div>
 
     </div>
+
    
     <p id="copyright"><a href="https://1drv.ms/w/s!AvskFMLY4m68gQh9ojn7Br6tqK09?e=Ihipb0" target="_blank">
             <i>Coded by A.I, worded by humans you probably know &copy;<i> 2024</i></a></p>
@@ -1484,6 +1497,27 @@ function toggleInfoPopup() {
 
         return html;
     }
+
+    function searchOptions() {
+    // Get input value and convert to lowercase for case-insensitive search
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all options
+    var options = document.querySelectorAll('.option');
+
+    // Loop through all options
+    for (var i = 0; i < options.length; i++) {
+        var optionText = options[i].textContent.toLowerCase();
+        var option = options[i];
+        
+        // Check if the option's text content contains the input value
+        if (optionText.indexOf(input) > -1) {
+            option.style.display = ''; // Show the option if it matches
+        } else {
+            option.style.display = 'none'; // Hide the option if it doesn't match
+        }
+    }
+}
 
 
             // Load Google Translate
