@@ -418,6 +418,7 @@ button:hover {
     
     <div class="background-pattern">
         <div id="popupContainer" class="popup-container">
+            <!---->
             <div class="popup-content">
                 <h3>
                     <a target="_blank" style="text-decoration: none;" class='optionPopup' data-clicked="false"
@@ -463,24 +464,27 @@ button:hover {
             <div class="options" id="options1">
                 <div class="line"></div>
                 <!--I trust your judgement-->
-                <div class="option" onclick="showVideo('https://www.youtube.com/embed/eKUuDRXtfPc')">
-                    <p>You're gonna limit me to 8 options Ant?</p>
+                
+                <div class="option" onclick="showOptions('options2')">
+                    <p>I agree, some things suck</p>
                 </div>
                 <div class="option" onclick="showOptions('options3')">
                     <p>I disagree, some things <b>don't</b> suck</p>
                 </div>
-                <div class="option" onclick="showVideo('https://www.youtube.com/embed/WNqkQrHj_ac')">
-                    <p>Am I ready for what you're about to tell me?</p>
-                </div>
-                <div class="option" onclick="showOptions('options2')">
-                    <p>I agree, some things suck</p>
-                </div>
-                <div class="option" onclick="showVideo('https://www.youtube.com/embed/jTsTUnCVqk0')">
-                    <p>Why am I here?</p>
-                </div>
                 <div class="option" onclick="showOptions('options4')">
                     <p>I am ready to ask the right questions</p>
                 </div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/eKUuDRXtfPc')">
+                    <p>You're gonna limit me to 3 options Ant?</p>
+                </div>
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/WNqkQrHj_ac')">
+                    <p>Am I ready for what you're about to tell me?</p>
+                </div>
+                
+                <div class="option" onclick="showVideo('https://www.youtube.com/embed/jTsTUnCVqk0')">
+                    <p>Why am I here?</p>
+                </div>
+                
                 <!--Interactions haven't been entirely normal, wouldn't you agree-->
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/KovQrs2g7gQ')">
                     <p>This is weird...</p>
@@ -489,6 +493,208 @@ button:hover {
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/7dKW99Ct5Kw')">
                     <p>Shouldn't we just stop asking questions? It just 'is' - we should just 'be' - we should think
                         more intuitively, live more humanely</p>
+                </div>
+                <div class="option" onclick="showOptions('options5')">
+                    <p>I feel trapped in my current toxic relationship</p>
+                </div>
+                <div class="option" onclick="showOptions('options6')">
+                    <p>I hate my job and nobody values me here, but I can't quit</p>
+                </div>
+                <div class="option" onclick="showOptions('options7')">
+                    <p>I'm fighting with people in my life and want peace</p>
+                </div>
+            </div>
+
+            <div class="options" id="options7">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options71')">
+                    <p>1. We are all born to fight I'm life.</p>
+                </div>
+                <div class="option" onclick="showOptions('options72')">
+                    <p>2. Who or what is the enemy after all.</p>
+                </div>
+                <div class="option" onclick="showOptions('options73')">
+                    <p>3. Is fighting an act that is justified?</p>
+                </div>
+                <div class="option" onclick="showOptions('options74')">
+                    <p>4. Could I avoid an impending fight.</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options71">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options71')">
+                    <p>Ant: I mean sure... but also, not everything is a confrontation right?</p>
+                </div>
+                <div class="option" onclick="showOptions('options72')">
+                    <p>Ant: But we fight with a lot of things, the fight for recognition, the fight for respect, the fight for wealth - this is the existence we subscribe to...</p>
+                </div>
+                <div class="option" onclick="showOptions('options73')">
+                    <p>Ant: But 'Born to fight', yes and no. Born to love and fight. Let's try nuture that side as well &#128522;</p>
+                </div>
+                <div class="option" onclick="showOptions('options7')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options72">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options74')">
+                    <p>Ant: I hope you're suggesting you might be your own greatest enemy? It's probably accurate at least in my own experience</p>
+                </div>
+                <div class="option" onclick="showOptions('options75')">
+                    <p>Ant: Or are we talking about an underlying reason for all conflict? like an ignorance, or living out of pain or desperation?</p>
+                </div>
+                <div class="option" onclick="showOptions('options76')">
+                    <p>Ant: Or are we talking about a 'good' vs 'evil', religious based perspective?</p>
+                </div>
+                <div class="option" onclick="showOptions('options7')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options73">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options77')">
+                    <p>Ant: Good point - are you justifying conflict by reacting with more conflict? And yet I often personally think this is a solution.</p>
+                </div>
+                <div class="option" onclick="showOptions('options78')">
+                    <p>Ant: However I also know instances where you have to stand up for yourself - it's difficult to know appropriate degrees of aggresion, isn't it?</p>
+                </div>
+                <div class="option" onclick="showOptions('options7')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options74">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options79')">
+                    <p>Ant: Reminds me of martial arts, the first reaction in self defense is to avoid conflict in the first place - this is fairly obvious but instinctually we become reactive and defensive I think?</p>
+                </div>
+                <div class="option" onclick="showOptions('options80')">
+                    <p>Ant: So let me ask you this - could you avoid impending conflict, by not 'poking the bear' - we all do things we know upset others, maybe our best 'conflict resolution' is to be lekker in the first place?</p>
+                </div>
+                <div class="option" onclick="showOptions('options7')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options6">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options61')">
+                    <p>I can't quit because I don't know if I will find other opportunities, it's too risky</p>
+                </div>
+                <div class="option" onclick="showOptions('options62')">
+                    <p>Although there are some good days at work where I feel recognised, it's very rare unfortunately</p>
+                </div>
+                <div class="option" onclick="showOptions('options63')">
+                    <p>I struggle lots with my own self worth and a small part of me wonders if I devalue myself as an imagined sort of punishment</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options61">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I hate the fear that has such a hold on me</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>Because I know that there might be light on the other side of the risk, I wish I had the strength to take the leap</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I don't trust my decisions anymore. It sucks. </p>
+                </div>
+                <div class="option" onclick="showOptions('options6')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options62">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I could try exaggerate the positive moments to numb the pain of the rest of the work life</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>Yes, to see more of the good would be an excellent start</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>But one day I would like to leave, I cannot maintain like this</p>
+                </div>
+                <div class="option" onclick="showOptions('options6')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options63">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I struggle with self-esteem and have to recognise it's role in this</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>Workplace criticism can't be avoided so I should work on myself?</p>
+                </div>
+                <div class="option" onclick="showOptions('options6')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options5">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options51')">
+                    <p>I keep attracting the wrong people into my life</p>
+                </div>
+                <div class="option" onclick="showOptions('options52')">
+                    <p>Or I deserve this because I'm not as good of a person as I think I am?</p>
+                </div>
+                <div class="option" onclick="showOptions('options53')">
+                    <p>How do I know if I deserve better? What if this is as good as it gets?</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options51">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I'm trying to find 'the right people' but I can't shake my bad habits, half of me thinks I seek it out</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I don't actually need people in my life if it's so bad, but I also feel needy and can't be alone</p>
+                </div>
+                <div class="option" onclick="showOptions('options5')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options52">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>Don't we all think we're better than we really are?</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I mean I'm no saint, but I also am not the devil - how do I find what's best for me?</p>
+                </div>
+                <div class="option" onclick="showOptions('options5')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
+            </div>
+
+            <div class="options" id="options53">
+                <div class="line"></div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>As much as I don't know what I deserve, I do know this is far too painful to be what I do deserve</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>I can't find the solution, but only what I know I don't need in my life, and that is good enough</p>
+                </div>
+                <div class="option" onclick="showOptions('options5')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -566,6 +772,9 @@ button:hover {
                 <div class="option" onclick="showOptions('options61')">
                     <p>What is 'intiution' and how do I use it more in my life?</p>
                 </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options2">
@@ -588,6 +797,9 @@ button:hover {
                 <div class="option" onclick="showOptions('options25')">
                     <p>Why are you still clicking sentences?</p>
                 </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options3">
@@ -601,6 +813,9 @@ button:hover {
                 <!--Allergic to bullshit-->
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/yGVWvApjCZ0')">
                     <p>Everything is perfectly balanced, we don't need to intervene</p>
+                </div>
+                <div class="option" onclick="showOptions('options1')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -629,6 +844,9 @@ button:hover {
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
                     <p>Just leave me alone Ant - this isn't fun</p>
                 </div>
+                <div class="option" onclick="showOptions('options3')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options32">
@@ -642,6 +860,9 @@ button:hover {
                 <!--What do you want from me-->
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
                     <p>I do not want to know or <b>see</b> more Ant</p>
+                </div>
+                <div class="option" onclick="showOptions('options3')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -728,6 +949,9 @@ button:hover {
                 <div class="option">
                     <p><a href="https://www.google.com" target="_blank">The world is your oyster...</a></p>
                 </div>
+                <div class="option" onclick="showOptions('options3')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
 
@@ -746,33 +970,11 @@ button:hover {
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/CAtu2MhgnJg')">
                     <p>Does the world need my help?</p>
                 </div>
-            </div>
-
-            <div class="options" id="options215">
-                <div class="line"></div>
-                <div class="option" onclick="showOptions('options217')">
-                    <p>'Enough' will become apparent, once you reach it</p>
-                </div>
-                <div class="option" onclick="showOptions('options218')">
-                    <p>Is there an easier way?</p>
-                </div>
-                <div class="option" onclick="showOptions('options219')">
-                    <p>I'm tired, I can't keep grinding away like this anymore</p>
+                <div class="option" onclick="showOptions('options2')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
-            <div class="options" id="options219">
-                <div class="line"></div>
-                <div class="option" onclick="showOptions('options220')">
-                    <p>Take a break - we're all in this for the long-haul</p>
-                </div>
-                <div class="option" onclick="showOptions('options221')">
-                    <p>Is it comforting to know that <b>nobody</b> survives life?</p>
-                </div>
-                <div class="option" onclick="showOptions('options222')">
-                    <p>Are you spreading yourself too thin?</p>
-                </div>
-            </div>
 
             <div class="options" id="options2c">
                 <div class="line"></div>
@@ -789,6 +991,9 @@ button:hover {
                 <div class="option" onclick="showOptions('options33')">
                     <p>Maybe... I'm expecting others to do for me - yet I will not do for others?</p>
                 </div>
+                <div class="option" onclick="showOptions('options21')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options22">
@@ -801,6 +1006,9 @@ button:hover {
                 </div>
                 <div class="option" onclick="showOptions('options223')">
                     <p>I prefer not to think. Fullstop, Ant.</p>
+                </div>
+                <div class="option" onclick="showOptions('options2')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -815,18 +1023,24 @@ button:hover {
                 <div class="option" onclick="showOptions('options33')">
                     <p>I am comfortable where I am - but I would like to be braver</p>
                 </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options222">
                 <div class="line"></div>
                 <div class="option" onclick="showOptions('options33')">
-                    <p>Problems are fleeting - unwaivering collective action is forever</p>
+                    <p>Ant: Problems are fleeting - you got this, just look past the present darkness </p>
                 </div>
                 <div class="option" onclick="showOptions('options33')">
-                    <p>I think about problems a lot - but don't know how to get involved</p>
+                    <p>I think about problems a lot, but don't know how to get involved in solving them... including my own</p>
                 </div>
                 <div class="option" onclick="showOptions('options33')">
                     <p>I alone am powerless, I've tried and failed before, I've given up</p>
+                </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -842,6 +1056,9 @@ button:hover {
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
                     <p>I'd prefer to have been born a sloth - leave me alone to sleep, Ant</p>
                 </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options23">
@@ -855,6 +1072,9 @@ button:hover {
                 <!--What do you want from me-->
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/HyxHHYOhFT4')">
                     <p>What if I just stay on the fence, Ant?</p>
+                </div>
+                <div class="option" onclick="showOptions('options2')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
@@ -872,6 +1092,9 @@ button:hover {
                 <div class="option" onclick="showOptions('options33')">
                     <p>I care because if nothing else, we have each other</p>
                 </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>&#x21B1; Up one level</p>
+                </div>
             </div>
 
             <div class="options" id="options25">
@@ -888,6 +1111,9 @@ button:hover {
                 <!--Dumbest smart person-->
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/XFRewZImtl8')">
                     <p>I like clicking things</p>
+                </div>
+                <div class="option" onclick="showOptions('options22')">
+                    <p>&#x21B1; Up one level</p>
                 </div>
             </div>
 
