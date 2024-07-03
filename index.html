@@ -330,8 +330,8 @@
     font-size: 0.85rem;
 }
 
-        /* Feedback Icon */
-        #feedback-icon {
+       /* Feedback Icon */
+       #feedback-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -350,23 +350,23 @@
         /* Feedback Form */
         #feedback-form {
             display: none;
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    width: 400px;
-    color:black;
-    max-width: 90%; /* Ensures the popup does not exceed 90% of the viewport width */
-    max-height: 70%; /* Sets a maximum height for the popup */
-    background-color: #f9f9f9;
-    border: 1px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    border-radius: 5px;
-    word-wrap: break-word; /* Breaks long words */
-    overflow-wrap: break-word; /* Breaks long words */
-    box-sizing: border-box; /* Ensures padding is included in width */
-    overflow-y: auto; /* Adds a vertical scrollbar if the content exceeds max-height */
-    font-size: 0.75rem;
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 400px;
+            max-width: 90%; /* Ensures the popup does not exceed 90% of the viewport width */
+            max-height: 70%; /* Sets a maximum height for the popup */
+            background-color: #f9f9f9;
+            border: 1px solid #007bff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            word-wrap: break-word; /* Breaks long words */
+            overflow-wrap: break-word; /* Breaks long words */
+            box-sizing: border-box; /* Ensures padding is included in width */
+            overflow-y: auto; /* Adds a vertical scrollbar if the content exceeds max-height */
+            font-size: 0.75rem;
+            color: black;
         }
 
         #feedback-form h2 {
@@ -380,23 +380,63 @@
 
         #feedback-form textarea {
             width: 100%;
-            height: 100px;
+            height: 200px; /* Larger height for the textarea */
             margin-bottom: 10px;
+            resize: vertical; /* Allow vertical resizing */
         }
 
         #feedback-form button {
             margin-top: 10px;
         }
 
-        /* Checkbox Styling */
-        #feedback-form label {
-            display: block;
-            margin-bottom: 0px;
-            color: black;
+        /* Tree Form */
+        #tree-form, #output-html {
+            display: none;
+            border: none;
+            padding: 16px;
+            background-color: none;
+            max-width: 800px;
+            margin: 20px;
         }
 
-        #feedback-form input[type="checkbox"] {
-            margin-right: 10px;
+        .tree-node {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        .tree-node input[type="text"] {
+            width: 100%; /* Full width */
+            max-width: 100%; /* Maximum width */
+            padding: 10px; /* Padding for better appearance */
+            box-sizing: border-box; /* Ensure padding is included in width */
+            margin-bottom: 10px; /* Space between inputs */
+            font-size: 1rem; /* Font size */
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+        }
+
+        /* Output HTML container */
+        #output-html {
+            display: none;
+        }
+
+        #output-html textarea {
+            width: 100%;
+            height: 200px; /* Larger height for the textarea */
+            margin-top: 10px;
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .tree-node input[type="text"] {
+                width: 100%; /* Full width on smaller screens */
+                max-width: none; /* Remove max-width on smaller screens */
+            }
         }
 
 button {
@@ -1163,50 +1203,47 @@ button:hover {
                         </p>
                 </div>
 
-    <!-- Feedback Icon -->
-    <div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
+<!-- Feedback Icon -->
+<div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
 
-    <!-- Feedback Form -->
-    <div id="feedback-form">
-        <p>Anonymous feedback - because being vulnerable can be scary</p>
-        <form id="feedbackForm">
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Interesting"> Interesting
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Scary"> Scary
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Curious"> Curious
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Painful"> Painful
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Confusing"> Confusing
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Exciting"> Exciting
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Inspiring"> Inspiring
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Lost - Just Lost"> Lost - Just lost dude
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Fun"> Fun
-            </label>
-            <label>
-                <input type="checkbox" name="feedbackCategory" value="Funny"> Funny
-            </label>
-            <p>Comments, causes you'd like to add, or branches of options you've engineered for me &#128522</p>
-            <textarea id="feedbackText" placeholder="Enter your feedback here"></textarea>
-            <button type="submit">Send</button>
-            <button type="button" onclick="toggleFeedbackForm()">Close</button>
-            <p>Or email anthony.boetcher@gmail.com &#9996;</p>
-        </form>
+<!-- Feedback Form -->
+<div id="feedback-form">
+    <h2>Contribute to I, Humana</h2>
+    <p>How would you like to design the journey?</p>
+    <form id="setupForm">
+        <label>
+            Number of branches:
+            <select id="numBranches">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </label>
+        <label>
+            Number of iterations:
+            <select id="numIterations">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </label>
+        <button type="button" onclick="generateTree()">Generate Tree</button>
+    </form>
+</div>
 
+<!-- Tree Form -->
+<div id="tree-form">
+    <form id="feedbackTreeForm">
+        <div id="treeContainer"></div>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<!-- Output HTML container -->
+<div id="output-html">
+    <p>What your contribution to I, Humana looks like in robo language:</p>
+    <textarea id="generatedHtml" readonly></textarea>
+</div>
         <script>
 
             // Show the popup container when the page loads
@@ -1342,41 +1379,117 @@ function toggleInfoPopup() {
     const infoPopup = document.getElementById('info-popup');
     infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
 }
-            // Toggle Feedback Form
-            function toggleFeedbackForm() {
-                const feedbackForm = document.getElementById('feedback-form');
-                feedbackForm.style.display = feedbackForm.style.display === 'none' || feedbackForm.style.display === '' ? 'block' : 'none';
-            }
+            // Function to toggle feedback form visibility
+    function toggleFeedbackForm() {
+        const feedbackForm = document.getElementById('feedback-form');
+        feedbackForm.style.display = feedbackForm.style.display === 'none' || feedbackForm.style.display === '' ? 'block' : 'none';
+    }
 
-            // Handle Form Submission
-            document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-                event.preventDefault();
+    // Function to generate the feedback tree
+    function generateTree() {
+        const numBranches = parseInt(document.getElementById('numBranches').value);
+        const numIterations = parseInt(document.getElementById('numIterations').value);
+        const treeContainer = document.getElementById('treeContainer');
 
-                const feedbackText = document.getElementById('feedbackText').value;
-                const feedbackCategories = Array.from(document.querySelectorAll('input[name="feedbackCategory"]:checked'))
-                    .map(checkbox => checkbox.value)
-                    .join(', ');
+        treeContainer.innerHTML = '';  // Clear previous tree
 
-                if (feedbackText || feedbackCategories) {
-                    sendFeedback(feedbackCategories, feedbackText);
-                } else {
-                    alert('Please enter your feedback or select a category.');
+        // Recursive function to create tree nodes
+        const createNode = (prefix, level) => {
+            if (level > numIterations) return;
+
+            const node = document.createElement('div');
+            node.classList.add('tree-node');
+            const label = document.createElement('label');
+            label.textContent = `Input ${prefix}`;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = `input_${prefix}`;
+            label.appendChild(input);
+            node.appendChild(label);
+
+            // Create branches recursively
+            if (level < numIterations) {
+                const branch = document.createElement('div');
+                branch.classList.add('branch');
+                for (let i = 1; i <= numBranches; i++) {
+                    branch.appendChild(createNode(`${prefix}.${i}`, level + 1));
                 }
-            });
-
-            // Send Feedback
-            function sendFeedback(categories, feedback) {
-                emailjs.send("service_8bm44di", "template_ek9nzr8", {
-                    categories: categories,
-                    message: feedback
-                }).then(function (response) {
-                    alert('Feedback sent successfully!');
-                    document.getElementById('feedbackForm').reset();
-                    toggleFeedbackForm();
-                }, function (error) {
-                    alert('Failed to send feedback.');
-                });
+                node.appendChild(branch);
             }
+
+            return node;
+        };
+
+        // Append root node to treeContainer
+        treeContainer.appendChild(createNode('1', 1));
+        document.getElementById('tree-form').style.display = 'block';
+    }
+
+    // Event listener for feedback tree form submission
+    document.getElementById('feedbackTreeForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Gather form data
+        const formData = new FormData(event.target);
+        const feedbackData = {};
+        formData.forEach((value, key) => {
+            feedbackData[key] = value;
+        });
+
+        // Convert feedback data to HTML
+        const generatedHtml = convertToHtml(feedbackData);
+
+        // Display generated HTML on the screen
+        document.getElementById('generatedHtml').textContent = generatedHtml;
+        document.getElementById('output-html').style.display = 'block';
+
+        // Send generated HTML via email
+        sendGeneratedHtml(generatedHtml);
+    });
+
+    // Function to send generated HTML via email using EmailJS
+    function sendGeneratedHtml(htmlContent) {
+        emailjs.send("service_8bm44di", "template_ek9nzr8", {
+            message: htmlContent
+        }).then(function(response) {
+            alert('Humanized code sent successfully! :)');
+        }, function(error) {
+            alert('Failed to send humanized code, soz :(');
+        });
+    }
+
+    // Function to generate a random ID (8 digits)
+    function getRandomId() {
+        return Math.floor(10000000 + Math.random() * 90000000).toString();
+    }
+
+    // Function to convert feedback data to HTML
+    function convertToHtml(feedbackData) {
+        const keys = Object.keys(feedbackData);
+        const rootKey = keys[0].split('_')[1];
+        let html = generateHtmlBlock(rootKey, feedbackData, 'root');
+        return html;
+    }
+
+    // Recursive function to generate HTML block
+    function generateHtmlBlock(prefix, feedbackData, parentId) {
+        let html = '';
+        const childKeys = Object.keys(feedbackData).filter(key => key.startsWith(`input_${prefix}`));
+
+        childKeys.forEach(key => {
+            const childId = getRandomId();
+            html += `<div class="option" onclick="showOptions('options${childId}')">\n`;
+            html += `    <p>${feedbackData[key]}</p>\n`;
+            html += `</div>\n`;
+            html += `<div class="options" id="options${childId}">\n`;
+            const nextLevel = prefix.split('.').map((num, i, arr) => i === arr.length - 1 ? parseInt(num) + 1 : num).join('.');
+            html += generateHtmlBlock(`${prefix}.${nextLevel}`, feedbackData, `options${childId}`);
+            html += `</div>\n`;
+        });
+
+        return html;
+    }
+
 
             // Load Google Translate
 function googleTranslateElementInit() {
