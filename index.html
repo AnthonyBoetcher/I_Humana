@@ -454,7 +454,6 @@ button:hover, .info-button:hover, #feedback-icon:hover
     background-color: #0056b3;
 }
 
-
 #searchInput {
     width: calc(100% - 20px); /* Adjust padding */
     padding: 10px; /* Adjust padding as needed */
@@ -470,16 +469,16 @@ button:hover, .info-button:hover, #feedback-icon:hover
     <div class="background-pattern">
         
         <div id="popupContainer" class="popup-container">
-            <!---->
+            
             <div class="popup-content">
+                <!--
                 <h3>
                     <i>Everything</i> is interactive, for the curious among us...
                 </h3>
-                <p><i>To enter you must be a curious human being. Your current curiosity ranking is:</i></p><p id="counter" style="color: white;">0/8</p>
+                <p style="color: transparent"><i>To enter you must be a curious human being. Your current curiosity ranking is:</i></p><p id="counter" style="color: transparent">0/8</p>                
+                <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span> 
                 <br>
-                <span class="close" id="closeBtn" style="display:none;">&times; Close/enough &times;</span>
-                <br>
-                <div class="container">
+                <div class="container"> 
                     <div class="optionPopup" onclick="showVideo2('https://www.youtube.com/embed/QznsrytmB30')" data-clicked="false">
                         <img src="I'm not a robot image2.png" alt="Thumbnail" width="170vw" height="60vh">
                     </div>
@@ -488,18 +487,20 @@ button:hover, .info-button:hover, #feedback-icon:hover
                             <img src="Humana recaptcha.jpg" alt="Thumbnail" width="170vw" height="60vh">
                         </a>
                     </div>
-                    <div class='optionPopup' onclick="showVideo2('https://www.youtube.com/embed/Q3ALchL4R3I?si=AeRyC1MdH8mpe8lF')" data-clicked="false">
+                    <div>
                         <img src="recaptcha.png" alt="Recaptcha" width="60vw" height="60vw">
                     </div>
                 </div>
                 <div class="video-container2" id="videoContainer2"></div>
-                
-                <p style="text-align: left;">Everything from 29/06/2024 onwards has been contributed by other human beings - contribute responsibly.</p>
+            -->
+            
+                <p>Everything from 29/06/2024 onwards has been contributed by other human beings - contribute responsibly.</p>
             <p style="color:red;"><i><u>Obligatory disclaimer in case I get into trouble</u><br>Please enter at your own discretion, fellow thinking-feeling human. The views expressed in this community created experience are not meant to substitute healthy human interaction. Some views may be triggering, it is therefor advised that you enter when you are in a healthy mental space. If you or a fellow human is in need of medical treatment, please contact your local health care provider. BUT you are more than welcome to enter I, Humana and share your experiences &#128522;</i></p>
-            </div>
+            <span class="close" id="closeBtn" class="optionPopup">&times; Okay dude I get it &times;</span> 
         </div>
-        
-
+        </div>
+        </div>
+    
         <div class="tree" id="tree">
             <div class="node" onclick="showOptions('options1')">
                 <p>Hi there : It's okay</p>
@@ -1362,42 +1363,6 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 document.getElementById('closeBtn').onclick = function () {
     document.getElementById('popupContainer').style.display = "none";
 };
-
-// Select all clickable elements within the popup container with class 'optionPopup'
-const popupContainer = document.getElementById('popupContainer');
-const clickableElements = popupContainer.querySelectorAll('.optionPopup');
-
-// Counter element
-const counterElement = document.getElementById('counter');
-
-// Function to update the counter display
-function updateCounter() {
-    const clickedCount = Array.from(clickableElements).filter(element => element.dataset.clicked === 'true').length;
-    counterElement.textContent = `${clickedCount}/${clickableElements.length}`;
-}
-
-// Function to check if all elements are clicked
-function checkAllClicked() {
-    const allClicked = Array.from(clickableElements).every(element => element.dataset.clicked === 'true');
-    if (allClicked) {
-        counterElement.style.display = 'none';  // Hide the counter
-        document.getElementById('closeBtn').style.display = 'block';  // Show the close button
-    }
-}
-
-// Add click event listeners to all clickable elements
-clickableElements.forEach(element => {
-    element.addEventListener('click', function () {
-        if (element.dataset.clicked !== 'true') {
-            element.dataset.clicked = 'true';
-            updateCounter();
-            checkAllClicked();
-        }
-    });
-});
-
-// Initialize the counter
-updateCounter();
 
             // Function to show the video in the iframe
             function showVideo(videoUrl) {
