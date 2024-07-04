@@ -549,6 +549,70 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 <div class="option" onclick="showOptions('options7')">
                     <p>I'm fighting with people in my life and want peace</p>
                 </div>
+                <div class="option" onclick="showOptions('options60765909')">
+                    <p>What is my purpose in this life?</p>
+                </div>
+                <div class="option" onclick="showOptions('options26535744')">
+                    <p>I recently got bad news about a medical diagnosis that I cannot accept</p>
+                </div>
+            </div>
+
+        <div class="options" id="options26535744">
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options60355776')">
+                <p>Did I do something wrong? I know I can't take it personally but it feels personal</p>
+            </div>
+            <div class="option" onclick="showOptions('options10291519')">
+                <p>I know I'm in the first of the five stages of grief. Denial is so painful. I want to hold onto the previous version of me. </p>
+            </div>
+            <div class="option" onclick="showOptions('options1')">
+                <p>&#x21B1; Up one level</p>
+            </div>
+            </div>
+
+        <div class="options" id='options60355776'>
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options1')">
+                <p>I did something to attract this it's not random it cant be</p>
+            </div>
+            <div class="option" onclick="showOptions('options1')">
+                <p>what if it is random and bad things happen to good people which I know is also true</p>
+            </div>
+            <div class="option" onclick="showOptions('options26535744')">
+                <p>&#x21B1; Up one level</p>
+            </div>
+            </div>
+
+        <div class="options" id="options10291519">
+            <div class="line"></div>
+            <div class="option" onclick="showOptions('options1')">
+                <p>Lets hope the 5 stages will pass because it is comforting to know the flow of grief</p>
+            </div>
+            <div class="option" onclick="showOptions('options1')">
+                <p>what can I do do accept my new existence , embrace it?</p>
+            </div>
+            <div class="option" onclick="showOptions('options26535744')">
+                <p>&#x21B1; Up one level</p>
+            </div>
+            </div>
+            
+            <div class="options" id="options60765909">
+                <div class="line"></div>
+            <div class="option" onclick="showOptions('options82031304')">
+                <p>Why me and not the child who embraced fatality at an age where life was supposed to thrive?</p>
+            </div>
+          
+            <div class="option" onclick="showOptions('options1')">
+                <p>Was I fully equipped to be living?</p>
+            </div>
+            
+            <div class="option" onclick="showOptions('options1')">
+                <p>am I supposed to feel guilty for being alive and confused?</p>
+            </div>
+           
+            <div class="option" onclick="showOptions('options1')">
+                <p>is the need to know that I am alive a pure purpose to carry on. 🤷🏼‍♂️</p>
+            </div>
             </div>
 
             <div class="options" id="options7">
@@ -1216,7 +1280,7 @@ button:hover, .info-button:hover, #feedback-icon:hover
 
 <!-- Feedback Form -->
 <div id="feedback-form">
-    <h2>Contribute to I, Humana</h2>
+    <h2>Contribute to I, Humana - WAIT, IF YOU'RE READING THIS WE ARE FIXING THIS FUNCTION STILL</h2>
     <p>How would you like to design the journey?:</p>
     <form id="setupForm">
         <label>
@@ -1460,7 +1524,7 @@ function toggleInfoPopup() {
         emailjs.send("service_8bm44di", "template_ek9nzr8", {
             message: htmlContent
         }).then(function(response) {
-            alert('Humanized code sent successfully! :)');
+            alert('Humanized code sent successfully! :) Scroll down to see your contribution');
         }, function(error) {
             alert('Failed to send humanized code, soz :(');
         });
@@ -1480,23 +1544,28 @@ function toggleInfoPopup() {
     }
 
     // Recursive function to generate HTML block
-    function generateHtmlBlock(prefix, feedbackData, parentId) {
-        let html = '';
-        const childKeys = Object.keys(feedbackData).filter(key => key.startsWith(`input_${prefix}`));
+function generateHtmlBlock(prefix, feedbackData, parentId) {
+    let html = '';
 
-        childKeys.forEach(key => {
-            const childId = getRandomId();
-            html += `<div class="option" onclick="showOptions('options${childId}')">\n`;
-            html += `    <p>${feedbackData[key]}</p>\n`;
-            html += `</div>\n`;
-            html += `<div class="options" id="options${childId}">\n`;
-            const nextLevel = prefix.split('.').map((num, i, arr) => i === arr.length - 1 ? parseInt(num) + 1 : num).join('.');
-            html += generateHtmlBlock(`${prefix}.${nextLevel}`, feedbackData, `options${childId}`);
-            html += `</div>\n`;
-        });
+    const childKeys = Object.keys(feedbackData).filter(key => key.startsWith(`input_${prefix}`));
 
-        return html;
-    }
+    childKeys.forEach((key, index) => {
+        const childId = getRandomId();
+        if (index > 0) {
+            html += `<div class="line"></div>\n`; // Add line element except for the first child
+        }
+        html += `<div class="option" onclick="showOptions('options${childId}')">\n`;
+        html += `    <p>${feedbackData[key]}</p>\n`;
+        html += `</div>\n`;
+        html += `<div class="options" id="options${childId}">\n`;
+        
+        const nextLevel = prefix.split('.').map((num, i, arr) => i === arr.length - 1 ? parseInt(num) + 1 : num).join('.');
+        html += generateHtmlBlock(`${prefix}.${nextLevel}`, feedbackData, `options${childId}`);
+        html += `</div>\n`;
+    });
+
+    return html;
+}
 
     function searchOptions() {
     // Get input value and convert to lowercase for case-insensitive search
