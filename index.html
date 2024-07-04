@@ -449,7 +449,32 @@ button {
     cursor: pointer;
 }
 
-button:hover, .info-button:hover, #feedback-icon:hover
+#button2 {
+    position: fixed;
+            bottom: 20px;
+            right: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#button3 {
+    position: fixed;
+            bottom: 20px;
+            left: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+
+#button3:hover, #button2:hover, button:hover, .info-button:hover, #feedback-icon:hover
  {
     background-color: #0056b3;
 }
@@ -1265,7 +1290,7 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 </div>
             </div>
             <p style="font-size: 0.7rem"><i>&#9757; Hint: please don't stop being curious now, we're just getting started... &#9757; </i></p>
-            <input type="text" id="searchInput" onkeyup="searchOptions()" placeholder="Search..">
+            <!--<input type="text" id="searchInput" onkeyup="searchOptions()" placeholder="Search..">-->
         </div>
 
     </div>
@@ -1293,9 +1318,9 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 <button onclick="toggleSpeech()">Read Content</button>
 
                 <!--INFORMATION BUTTON-->
-  <div class="info-button" onclick="toggleInfoPopup()">
-                    <i><b>i</b></i> <!-- This can be replaced with an icon font like FontAwesome if desired -->
-                </div>
+  <button id="button3" onclick="toggleInfoPopup()">
+                    More info pls <!-- This can be replaced with an icon font like FontAwesome if desired -->
+  </button>
                 <div id="info-popup" class="info-popup">
                     <!-- Add your information here -->
                     <p>Welcome, curious human, to "I, Humana"<br><br>
@@ -1314,7 +1339,7 @@ button:hover, .info-button:hover, #feedback-icon:hover
                 </div>
 
 <!-- Feedback Icon -->
-<div id="feedback-icon" onclick="toggleFeedbackForm()">&#9993;</div>
+<button id="button2" onclick="toggleFeedbackForm()">Contribute a branch &#9993;</button>
 
 <!-- Feedback Form -->
 <div id="feedback-form">
