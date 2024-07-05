@@ -538,7 +538,7 @@ button {
             <div class="options" id="options1">
                 <div class="line"></div>
                 <!--I trust your judgement-->
-                <p style="color:rgb(114, 248, 255)"><i>I, Humana's attempt at understanding our 'humanity' below (pls contribute by clicking "contribute a branch" button)</i></p>
+                <p style="color:rgb(114, 248, 255)"><i>I, Humana's (our) attempt at understanding our 'humanity' below (pls contribute by clicking "contribute a branch" button)</i></p>
 
                 <div class="option" onclick="showOptions('options2')">
                     <p>I agree, some things suck</p>
@@ -1555,7 +1555,7 @@ button {
 
 <!-- Feedback Form -->
 <div id="feedback-form">
-    <p>Contribute to I, Humana - STILL UNDER CONSTRUCTION you can submit in the same numbering as the decision tree,<br>but please make sure you type it out in the response ie input 1. = "1. Comment here XYZ" , input 1.1 = "1.1 Comment following from 1. as me rationalizing/debating with myself" , input 1.2 = "1.2 Comment contrasting 1.1, playing devils advocate", you can leave empty responses it will be dealt with accordingly...<i style="font-size:24px" class="fa">&#xf014;</i></p>
+    <p>Contribute to I, Humana - STILL UNDER CONSTRUCTION you can submit in the same numbering as the decision tree,<br>but please make sure you type it out in the response ie input 1. = "1. Comment here XYZ" , input 1.1 = "1.1 Comment following from 1. as me rationalizing/debating with myself" , input 1.2 = "1.2 Comment contrasting 1.1, playing devils advocate", you can leave empty responses it will be dealt with accordingly...<i style="font-size:14px" class="fa"> &#xf014;</i></p>
     <p>How would you like to design the journey?:</p>
     <form id="setupForm">
         <label>
@@ -1730,12 +1730,32 @@ function toggleInfoPopup() {
             }
 
             return node;
+            
         };
 
         // Append root node to treeContainer
         treeContainer.appendChild(createNode('1', 1));
         document.getElementById('tree-form').style.display = 'block';
+
+    
+// Close the popup after generating the tree
+closePopup();
+
+        // Scroll to the bottom of the page after generating the tree
+        scrollToBottom(); 
     }
+
+    // Function to close the popup
+        function closePopup() {
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+        // Function to scroll to the bottom of the page
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+       
+
 
     // Event listener for feedback tree form submission
     document.getElementById('feedbackTreeForm').addEventListener('submit', function (event) {
@@ -1768,6 +1788,10 @@ function toggleInfoPopup() {
         }, function(error) {
             alert('Failed to send humanized code, soz :(');
         });
+
+        
+        // Scroll to the bottom of the page after generating the tree
+        scrollToBottom(); 
     }
 
     // Function to generate a random ID (8 digits)
