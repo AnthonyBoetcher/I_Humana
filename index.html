@@ -398,6 +398,7 @@
             background-color: none;
             max-width: 800px;
             margin: 20px;
+            margin-bottom: 50px;
         }
 
         .tree-node {
@@ -466,6 +467,17 @@ button {
             bottom: 20px;
             left: 20px;
     padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+
+#button4 {
+    padding: 10px;
+    bottom: 50px;
     border: none;
     border-radius: 5px;
     background-color: #007bff;
@@ -1525,7 +1537,7 @@ button {
                     </select>
                 <button onclick="toggleSpeech()">Read Content</button>
 
-                <br><br><br><br><br><br><br><br><br>
+                <br><br><br>
 
                 <!--INFORMATION BUTTON-->
   <button id="button3" onclick="toggleInfoPopup()">
@@ -1578,7 +1590,7 @@ button {
 <div id="tree-form">
     <form id="feedbackTreeForm">
         <div id="treeContainer"></div>
-        <button type="submit">Send</button>
+        <button id="button4" type="submit">Send</button>
     </form>
 </div>
 
