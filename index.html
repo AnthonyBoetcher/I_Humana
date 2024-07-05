@@ -1555,7 +1555,7 @@ button {
 
 <!-- Feedback Form -->
 <div id="feedback-form">
-    <p>Contribute to I, Humana - STILL UNDER CONSTRUCTION you can submit in the same numbering as the decision tree,<br>but please make sure you type it out in the response ie input 1. = "1. Comment here XYZ" , input 1.1 = "1.1 Comment following from 1. as me rationalizing/debating with myself" , input 1.2 = "1.2 Comment contrasting 1.1, playing devils advocate", you can leave empty responses it will be dealt with accordingly...<i style="font-size:14px" class="fa"> &#xf014;</i></p>
+    <p>Contribute to I, Humana - UNDER CONSTRUCTION, but you can still submit in the same numbering as the decision tree,<br>but please make sure you type it out in the response ie input 1. = "1. Comment here XYZ" , input 1.1 = "1.1 Comment following from 1. as me rationalizing/debating with myself" , input 1.2 = "1.2 Comment contrasting 1.1, playing devils advocate", you can leave empty responses it will be dealt with accordingly...<i style="font-size:14px" class="fa"> &#xf014;</i></p>
     <p>How would you like to design the journey?:</p>
     <form id="setupForm">
         <label>
@@ -1563,7 +1563,6 @@ button {
             <select id="numBranches">
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
             </select>
         </label>
         <label>
@@ -1571,7 +1570,6 @@ button {
             <select id="numIterations">
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
             </select>
         </label>
         <button type="button" onclick="generateTree()">Generate Tree</button>
@@ -1755,8 +1753,6 @@ closePopup();
         }
 
        
-
-
     // Event listener for feedback tree form submission
     document.getElementById('feedbackTreeForm').addEventListener('submit', function (event) {
         event.preventDefault();
@@ -1784,7 +1780,7 @@ closePopup();
         emailjs.send("service_8bm44di", "template_ek9nzr8", {
             message: htmlContent
         }).then(function(response) {
-            alert('Humanized code sent successfully! :) Scroll down to see your contribution');
+            alert('Humanized code sent successfully! :) Thank you for your contribution!');
         }, function(error) {
             alert('Failed to send humanized code, soz :(');
         });
