@@ -36,6 +36,7 @@
         .option {
             cursor: pointer;
             margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         .option img {
@@ -252,7 +253,7 @@
             background-color: none;
             margin: 5% auto;
             /* 5% from the top and centered */
-            padding: 100px;
+            padding: 0px;
             border: none;
             width: 60%;
             /* Could be more or less, depending on screen size */
@@ -331,6 +332,31 @@
     overflow-y: auto; /* Adds a vertical scrollbar if the content exceeds max-height */
     font-size: 0.85rem;
 }
+
+/* Info Popup Styles */
+.youtube-popup {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    z-index:99;
+    left: 20vw;
+    width: 60vw;
+    color:black;
+    max-width: 90%; /* Ensures the popup does not exceed 90% of the viewport width */
+    max-height: 70%; /* Sets a maximum height for the popup */
+    background-color: none;
+    border: 1px solid none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 5px;
+    word-wrap: break-word; /* Breaks long words */
+    overflow-wrap: break-word; /* Breaks long words */
+    box-sizing: border-box; /* Ensures padding is included in width */
+    overflow-y: auto; /* Adds a vertical scrollbar if the content exceeds max-height */
+    font-size: 0.85rem;
+}
+
+
 
        /* Feedback Icon */
        #feedback-icon {
@@ -486,8 +512,19 @@ button {
     cursor: pointer;
 }
 
+#button5 {
+    padding: 10px;
+    top: 20px;
+    left: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
 
-#button4:hover, #button3:hover, #button2:hover, button:hover, .info-button:hover, #feedback-icon:hover
+
+#button5:hover,#button4:hover, #button3:hover, #button2:hover, button:hover, .info-button:hover, #feedback-icon:hover
  {
     background-color: #0056b3;
     transform: scale(1.03);
@@ -504,9 +541,16 @@ button {
 </head>
 
 <body>
-    
+  
     <div class="background-pattern">
-        
+                                  <!--youtube BUTTON-->
+<button id="button5" onclick="toggleYoutube()">
+    Humana Ep 1</i>
+    <!-- This can be replaced with an icon font like FontAwesome if desired -->
+</button>
+
+<iframe id="youtube-popup" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/68G8YuheBMM?si=SDSn0eJNcGSbbL1J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
         <div id="popupContainer" class="popup-container">
             
             <div class="popup-content">
@@ -532,13 +576,13 @@ button {
                 </div>
                 <div class="video-container2" id="videoContainer2"></div>
             --> 
-            
                 <p>Everything from 29/06/2024 onwards has been contributed by other human beings - contribute responsibly.</p>
             <p style="color:rgb(114, 248, 255)"><i><u>Obligatory disclaimer in case we get into trouble</u><br><br>"Please enter at your own discretion, fellow thinking-feeling human. The views expressed in this community created experience are not meant to substitute healthy human interaction. Some views may be triggering, it is therefor advised that you enter when you are in a healthy mental space. If you or a fellow human is in need of medical treatment, please contact your local health care provider."<br><br>- Admin, A.B and S.T &#x270C;</i></p>
             <span class="close" id="closeBtn" class="optionPopup">&times; Okay guys I get it &times;</span> 
         </div>
         </div>
         </div>
+
     
         <div class="tree" id="tree">
             <div class="node" onclick="showOptions('options1')">
@@ -552,19 +596,15 @@ button {
             <div class="options" id="options1">
                 <div class="line"></div>
                 <!--I trust your judgement-->
-                <p style="color:rgb(114, 248, 255)"><i>I, Humana's (our) attempt at understanding our 'humanity' below (pls contribute by clicking "contribute a branch" button)</i></p>
-
-                <div class="option" onclick="showOptions('options5977555244')">
-                    <p>Humpty dumpty <i style="color:rgb(114, 248, 255)">(&#x1F448;Funniest random submission award)</i></p>
-                </div>
+                <p style="color:rgb(114, 248, 255)"><i>Human contributed 'journeys', click to choose a story...</i></p>
                 <div class="option" onclick="showOptions('options2')">
-                    <p>I agree, some things suck</p>
+                    <p>(Admin contribution) I agree, some things suck</p>
                 </div>
                 <div class="option" onclick="showOptions('options3')">
-                    <p>I disagree, some things <b>don't</b> suck</p>
+                    <p>(Admin contribution) I disagree, some things <b>don't</b> suck</p>
                 </div>
                 <div class="option" onclick="showOptions('options4')">
-                    <p>I am ready to ask the right questions</p>
+                    <p>(Admin contribution) I am ready to ask the right questions</p>
                 </div>
                 <div class="option" onclick="showVideo('https://www.youtube.com/embed/eKUuDRXtfPc')">
                     <p>You're gonna limit me to 3 options Ant?</p>
@@ -590,34 +630,42 @@ button {
                 <div class="option" onclick="showOptions('options6')">
                     <p>I hate my job and nobody values me here, but I can't quit</p>
                 </div>
+                <div class="option" onclick="showOptions('options5977555244')">
+                    <p><i style="color: red;">(new)</i> Humpty dumpty <i style="color:rgb(114, 248, 255)">(&#x1F448;Funniest random submission award)</i></p>
+                </div>
                 <div class="option" onclick="showOptions('options7')">
-                    <p>I'm fighting with people in my life and want peace</p>
+                    <p><i style="color: red;">(new)</i> I'm fighting with people in my life and want peace</p>
                 </div>
                 <div class="option" onclick="showOptions('options60765909')">
-                    <p>What is my purpose in this life?</p>
+                    <p><i style="color: red;">(new)</i> What is my purpose in this life?</p>
                 </div>
                 <div class="option" onclick="showOptions('options26535744')">
-                    <p>I recently got bad news about a medical diagnosis that I cannot accept</p>
+                    <p><i style="color: red;">(new)</i> I recently got bad news about a medical diagnosis that I cannot accept</p>
                 </div>
                 <div class="option" onclick="showOptions('options1633215744')">
-                    <p>Got some good news today and we're on 100 days no loadshedding lol, things are okay guys pls cheer up from me to you xoxo <i style="color:rgb(114, 248, 255)">(&#x1F448; Good vibes award)</i></p>
+                    <p><i style="color: red;">(new)</i> Got some good news today and we're on 100 days no loadshedding lol, things are okay guys pls cheer up from me to you xoxo <i style="color:rgb(114, 248, 255)">(&#x1F448; Good vibes award)</i></p>
                 </div>
                 <div class="option" onclick="showOptions('options1253215544')">
-                    <p>I failed an exam and I'm trying to be positive but I just can't anymore</p>
+                    <p><i style="color: red;">(new)</i> I failed an exam and I'm trying to be positive but I just can't anymore</p>
                 </div>
               <!-- Main Option: My breasts are trying to kill me -->
                 <div class="option" onclick="showOptions('options78945612')">
-                    <p>My breasts are trying to kill me!</p>
+                    <p><i style="color: red;">(new)</i> My breasts are trying to kill me!</p>
                 </div>
                 <!-- Main Option: I want to break free -->
                 <div class="option" onclick="showOptions('options56789012')">
-                    <p>I want to break free ✨</p>
+                    <p><i style="color: red;">(new)</i> I want to break free ✨</p>
+                </div>
+
+                <!-- Main Option: I lost a loved one and it hurts so much -->
+                <div class="option" onclick="showOptions('options12345678')">
+                    <p><i style="color: red;">(new)</i> I lost a loved one and it hurts so much</p>
                 </div>
 
                                 
                 <!--CHAT GPT SECTION-->
 
-                <p style="color:rgb(114, 248, 255)"><i>ChatGPT's attempt at understanding our 'humanity' below (this is what's at stake guys...)</i></p>
+                <p style="color:rgb(114, 255, 177)"><i>ChatGPT's contributed 'journeys'</i></p>
                 <div class="option" onclick="showOptions('options18374567')">
                     <p>I'm feeling really lonely these days, any tips?</p>
                 </div>
@@ -633,7 +681,7 @@ button {
 
                 <!--CLAUDE SECTION-->
 
-                <p style="color:rgb(114, 248, 255)"><i>Claude.ai's attempt at understanding our 'humanity' below (this is what's at stake guys...)</i></p>
+                <p style="color:rgb(192, 255, 114)"><i>Claude.ai's contributed 'journeys'</i></p>
               
             <div class="option" onclick="showOptions('options56789012')">
                 <p>Why is it hard to be vulnerable in the digital age? 🔒</p>
@@ -650,7 +698,7 @@ button {
 
              <!--Llama3's section-->
 
-             <p style="color:rgb(114, 248, 255)"><i>Llama3's/MetaAI's attempt at understanding our 'humanity' below (this is what's at stake guys...)</i></p>
+             <p style="color:rgb(250, 114, 255)"><i>Llama3's/MetaAI's contributed 'journeys'</i></p>
              <div class="option" onclick="showOptions('options56789012')">
                 <p>Unshackling Human Spirit: 5 Freedoms Beyond AI's Reach 🌟</p>
             </div>
@@ -659,6 +707,78 @@ button {
             </div>
 
              
+<div class="options" id="options12345678">
+    <div class="line"></div>
+    <div class="option" onclick="showOptions('options23456789')">
+        <p>But I know they'd want me not to mourn them, they'd want me to be happy</p>
+    </div>
+    <div class="option" onclick="showOptions('options34567890')">
+        <p>I feel like I've physically lost a piece of myself, like my skin has been ripped off my body</p>
+    </div>
+    <div class="option" onclick="showOptions('options45678901')">
+        <p>Am I being too sensitive? I'm grieving so much and for so long</p>
+    </div>
+    <div class="option" onclick="showOptions('options1')">
+        <p>&#x21B1; Let's go back and think this through again.</p>
+    </div>
+</div>
+
+<!-- Sub-options for But I know they'd want me not to mourn them, they'd want me to be happy -->
+<div class="options" id="options23456789">
+    <div class="line"></div>
+    <div class="option">
+        <p>But how can I be happy knowing they're no longer here? (dead end)</p>
+    </div>
+    <div class="option">
+        <p>Or is this now a selfish thing about me? What I have lost. What I wanted for the future. My relationship that is gone. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>It's inhumane not to mourn, so surely some mourning is expected, but how much is enough? (dead end)</p>
+    </div>
+    <div class="option">
+        <p>What are they doing "on the other side" of existence? (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options12345678')">
+        <p>&#x21B1; Back to main options.</p>
+    </div>
+</div>
+
+<!-- Sub-options for I feel like I've physically lost a piece of myself, like my skin has been ripped off my body -->
+<div class="options" id="options34567890">
+    <div class="line"></div>
+    <div class="option">
+        <p>The pain is so bad, I want to escape from myself... (dead end)</p>
+    </div>
+    <div class="option">
+        <p>Like losing a limb, all that potential taken too early from this world (dead end)</p>
+    </div>
+    <div class="option">
+        <p>I don't know how to overcome this trauma, and I know they'd want me to move on (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options12345678')">
+        <p>&#x21B1; Back to main options.</p>
+    </div>
+</div>
+
+<!-- Sub-options for Am I being too sensitive? I'm grieving so much and for so long -->
+<div class="options" id="options45678901">
+    <div class="line"></div>
+    <div class="option">
+        <p>Part of me feels guilty for not loving and caring more when they were alive (dead end)</p>
+    </div>
+    <div class="option">
+        <p>It's the shock of it all, I didn't expect it. Sure, nobody does, but how can we prepare better so we are not all broken when someone dies? Expect them to die tomorrow? Don't be crazy (dead end)</p>
+    </div>
+    <div class="option">
+        <p>How much of this is me and my loss and how much is them and their absence? (dead end)</p>
+    </div>
+    <div class="option">
+        <p>I hope they're okay wherever they are (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options12345678')">
+        <p>&#x21B1; Back to main options.</p>
+    </div>
+</div>
 <!--Llama3's options section-->
 <div class="options" id="options56789012">
     <div class="line"></div>
@@ -2498,6 +2618,8 @@ button {
                     More info pls <i class="fa fa-info-circle" style="font-size:15px"></i>
                     <!-- This can be replaced with an icon font like FontAwesome if desired -->
   </button>
+
+
                 <div id="info-popup" class="info-popup">
                     <!-- Add your information here -->
                     <p>Welcome, curious human, to "I, Humana" <br><br><a style="color:blue" href="https://www.ancestry.com/first-name-meaning/humana" target="_blank"><i>(https://www.ancestry.com/first-name-meaning/humana)</i></a><br><br>
@@ -2514,6 +2636,8 @@ button {
                         So, if you're ready to embark on this journey and contribute to ‘I, Humana’, I welcome you back to your humanity – if you needed permission, a sign, anything… here it is         
                         </p>
                 </div>
+
+
 
 <!-- Feedback Icon -->
 <button id="button2" onclick="toggleFeedbackForm()">Contribute a branch &#x1F33F;</button>
@@ -2655,6 +2779,14 @@ function toggleInfoPopup() {
     const infoPopup = document.getElementById('info-popup');
     infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
 }
+
+            // Toggle Youtube channel
+            function toggleYoutube() {
+    const infoPopup = document.getElementById('youtube-popup');
+    infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
+}
+
+
             // Function to toggle feedback form visibility
     function toggleFeedbackForm() {
         const feedbackForm = document.getElementById('feedback-form');
