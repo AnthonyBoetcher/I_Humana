@@ -554,7 +554,14 @@ button {
     <!-- This can be replaced with an icon font like FontAwesome if desired -->
 </button>
 
+<button id="button5" onclick="toggleYoutube2()">
+    Humana Ep 2</i>
+    <!-- This can be replaced with an icon font like FontAwesome if desired -->
+</button>
+
 <iframe id="youtube-popup" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/68G8YuheBMM?si=SDSn0eJNcGSbbL1J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe id="youtube-popup2" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/rBqLE1wqLD8?si=QLESJALipC5XCzXJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <div id="popupContainer" class="popup-container">
             
@@ -2790,6 +2797,11 @@ function toggleInfoPopup() {
             // Toggle Youtube channel
             function toggleYoutube() {
     const infoPopup = document.getElementById('youtube-popup');
+    infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
+}
+
+function toggleYoutube2() {
+    const infoPopup = document.getElementById('youtube-popup2');
     infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
 }
 
