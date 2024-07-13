@@ -140,7 +140,8 @@
         }
 
         .option {
-            margin-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 30px;
             cursor: pointer;
         }
 
@@ -675,6 +676,10 @@ button {
                 <div class="option" onclick="showOptions('options12345678')">
                     <p><i style="color: red;">(new)</i> I lost a loved one and it hurts so much</p>
                 </div>
+                <!-- Main Option: I'm struggling to find work and it's really depressing -->
+                <div class="option" onclick="showOptions('options87654321')">
+                    <p><i style="color: red;">(new)</i> I'm struggling to find work and it's really depressing</p>
+                </div>
 
                                 
                 <!--CHAT GPT SECTION-->
@@ -720,6 +725,8 @@ button {
 
             </div>
 
+
+            <!--LLM OPTIONS SECTIONS BELOW-->
              
 <div class="options" id="options12345678">
     <div class="line"></div>
@@ -1896,6 +1903,77 @@ button {
     </div>
     <div class="option" onclick="showOptions('options47583920')">
         <p>&#x21B1; Back to feeling overwhelmed options.</p>
+    </div>
+</div>
+
+
+
+<!--HUMAN CONTRIBUTED STORIES BELOW-->
+
+<div class="options" id="options87654321">
+    <div class="line"></div>
+    <div class="option" onclick="showOptions('options98765432')">
+        <p>I've studied and thought this was enough, I can't understand why it's this difficult, is it me or something I'm doing wrong?</p>
+    </div>
+    <div class="option" onclick="showOptions('options87654322')">
+        <p>A lot of my friends have also struggled so it's a widely felt issue for our youth</p>
+    </div>
+    <div class="option" onclick="showOptions('options76543210')">
+        <p>What is the point of studying for so long when we don't work in the career we expected?</p>
+    </div>
+    <div class="option" onclick="showOptions('options1')">
+        <p>&#x21B1; Let's go back and think this through again.</p>
+    </div>
+</div>
+
+<!-- Sub-options for I've studied and thought this was enough, I can't understand why it's this difficult, is it me or something I'm doing wrong? -->
+<div class="options" id="options98765432">
+    <div class="line"></div>
+    <div class="option">
+        <p>I feel so flawed, I can't keep getting ignored and rejected like this. I deserve better, don't I? (dead end)</p>
+    </div>
+    <div class="option">
+        <p>Maybe this is just life stuff I must fight with. Difficult to tell how much is me and how much is the current economy. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>I am focusing on my health despite it all because, at the end of the day, that's all I have right now. (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options87654321')">
+        <p>&#x21B1; Back to main options.</p>
+    </div>
+</div>
+
+<!-- Sub-options for A lot of my friends have also struggled so it's a widely felt issue for our youth -->
+<div class="options" id="options87654322">
+    <div class="line"></div>
+    <div class="option">
+        <p>I wish I could help my friends too. We are sharing this pain as an entire generation right now. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>Would I feel bad for getting work when others can't? Do I deserve it more than them? We all deserve fair work. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>I often think about what life is like in other countries and maybe I should just go to my hometown but that's not certain either. (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options87654321')">
+        <p>&#x21B1; Back to main options.</p>
+    </div>
+</div>
+
+<!-- Sub-options for What is the point of studying for so long when we don't work in the career we expected? -->
+<div class="options" id="options76543210">
+    <div class="line"></div>
+    <div class="option">
+        <p>Not just study for so long, but fight for such a simple right. Not asking for that much here. Just want to work hard to earn money. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>And besides that, I know it's a gift to access education so I am trying to be grateful for that too but it's not easy. (dead end)</p>
+    </div>
+    <div class="option">
+        <p>I think I must accept whichever work comes my way and let go of what I studied or what career I wanted. (dead end)</p>
+    </div>
+    <div class="option" onclick="showOptions('options87654321')">
+        <p>&#x21B1; Back to main options.</p>
     </div>
 </div>
 
