@@ -551,17 +551,22 @@ button {
     <div class="background-pattern">
                                   <!--youtube BUTTON-->
 <button id="button5" onclick="toggleYoutube()">
-    Humana Ep 1</i>
+    Humana EP 1</i>
     <!-- This can be replaced with an icon font like FontAwesome if desired -->
 </button>
 
 <button id="button5" onclick="toggleYoutube2()">
-    Humana Ep 2</i>
+    Humana EP 2</i>
     <!-- This can be replaced with an icon font like FontAwesome if desired -->
 </button>
 
 <button id="button5" onclick="toggleYoutube3()">
-    Humana Ep 3</i>
+    Humana EP 3</i>
+    <!-- This can be replaced with an icon font like FontAwesome if desired -->
+</button>
+
+<button id="button5" onclick="toggleYoutube4()">
+    Humana guest EP</i>
     <!-- This can be replaced with an icon font like FontAwesome if desired -->
 </button>
 
@@ -570,6 +575,8 @@ button {
 <iframe id="youtube-popup2" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/rBqLE1wqLD8?si=QLESJALipC5XCzXJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <iframe id="youtube-popup3" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/ZoXK9g1nY8Y?si=-fN2az1nSJwWYh0K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe id="youtube-popup4" class="youtube-popup" width="560" height="315" src="https://www.youtube.com/embed/QCet_6lghU4?si=NoYI3ZyjhE928pgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <div id="popupContainer" class="popup-container">
             
@@ -672,15 +679,15 @@ button {
                 </div>
               <!-- Main Option: My breasts are trying to kill me -->
                 <div class="option" onclick="showOptions('options78945612')">
-                    <p><i style="color: red;">(new)</i> My breasts are trying to kill me!</p>
+                    <p>My breasts are trying to kill me!</p>
                 </div>
                 <!-- Main Option: I want to break free -->
                 <div class="option" onclick="showOptions('options1111111111')">
-                    <p><i style="color: red;">(new)</i> I want to break free ✨</p>
+                    <p>I want to break free ✨</p>
                 </div>
                 <!-- Main Option: I lost a loved one and it hurts so much -->
                 <div class="option" onclick="showOptions('options12345678')">
-                    <p><i style="color: red;">(new)</i> I lost a loved one and it hurts so much</p>
+                    <p>I lost a loved one and it hurts so much</p>
                 </div>
                 <!-- Main Option: I'm struggling to find work and it's really depressing -->
                 <div class="option" onclick="showOptions('options87654321')">
@@ -691,7 +698,14 @@ button {
             <div class="option" onclick="showOptions('options10000001')">
                 <p><i style="color: red;">(new)</i> Relationship problems...</p>
             </div>
-
+            <!-- ADD NEW HUMAN BRANCHES HERE
+            <div class="option" onclick="showOptions('options10000002')">
+                <p><i style="color: red;">(new)</i> I feel like I've been given a second chance on life</p>
+            </div>
+            <div class="option" onclick="showOptions('options10000003')">
+                <p><i style="color: red;">(new)</i> </p>
+            </div>
+            -->
                                 
                 <!--CHAT GPT SECTION-->
 
@@ -2964,6 +2978,11 @@ function toggleYoutube2() {
 
 function toggleYoutube3() {
     const infoPopup = document.getElementById('youtube-popup3');
+    infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
+}
+
+function toggleYoutube4() {
+    const infoPopup = document.getElementById('youtube-popup4');
     infoPopup.style.display = infoPopup.style.display === 'none' || infoPopup.style.display === '' ? 'block' : 'none';
 }
 
